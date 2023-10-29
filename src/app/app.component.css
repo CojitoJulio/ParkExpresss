@@ -1,0 +1,27 @@
+:root {
+    --first-bg-color: #294D61;
+    --second-bg-color: #6DA5c0;
+    --third-bg-color: #0f9690;
+    --four-bg-color: #0c7075;
+    --five-bg-color: #072e33;
+    --six-bg-color: #05161a;
+}
+
+body{
+    height: 100vh;
+    background-color: #294D61;
+}
+
+header{
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+nav{
+    background-color: #294D61;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+}
