@@ -58,6 +58,10 @@
         padding: 15px 0px;
     }
 
+    .value{
+        width: 95px;
+    }
+
     .image img{
         height: 30px;
     }
