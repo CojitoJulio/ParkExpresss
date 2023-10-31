@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CreditcardComponent } from './components/creditcard/creditcard.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ErrorComponent } from './components/error/error.component';
     RegisterComponent,
     CreditcardComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
