@@ -1,100 +1,278 @@
 <main>
-    <aside class="side border">
+  <aside class="side border">
+    <article class="titulo">
+      <p>Mis Estacionamientos</p>
+    </article>
+    <article class="parking">
+      <div class="parkicon">P</div>
+      <div class="parkinfo">
+        <p class="street">Avenida Siempre Viva #2189</p>
+        <p class="parkstatus deshabilitado">Deshabilitado</p>
+      </div>
+    </article>
+    <article class="parking">
+      <div class="parkicon">P</div>
+      <div class="parkinfo">
+        <p class="street">Avenida Providencia #798</p>
+        <p class="parkstatus habilitado">Habilitado</p>
+      </div>
+    </article>
 
-        <article class="titulo">
-            <p>Mis Estacionamientos</p>
-        </article>
-        <article class="parking">
-            <div class="parkicon">P</div>
-            <div class="parkinfo">
-                <p class="street">Avenida Siempre Viva #2189</p>
-                <p class="deshabilitado">Deshabilitado</p>
+    <article class="addparking">+ Añadir Estacionamiento</article>
+
+    <div id="division"></div>
+
+    <article class="titulo">
+      <p>Mis Vehiculos</p>
+    </article>
+
+    <article class="vehicle">
+      <div class="caricon">
+        <img src="../../../assets/car.svg" />
+      </div>
+      <div class="carinfo">
+        <p class="model">Chery</p>
+        <p class="model">Tiggo 7 Pro</p>
+        <p class="patente">RY·FK·32</p>
+      </div>
+    </article>
+
+    <article class="addparking">+ Añadir Vehiculo</article>
+  </aside>
+  <div class="central border">
+    <section class="client">
+      <div class="resumen">
+        <div class="first borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-clock-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+            />
+          </svg>
+          <div class="blocksdata">
+            <p>Horas Semanales:</p>
+            <p>21 Horas</p>
+          </div>
+        </div>
+        <div class="second borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-cash-stack"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+            />
+            <path
+              d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"
+            />
+          </svg>
+          <div class="blocksdata">
+            <p>Total:</p>
+            <p>$39.200</p>
+          </div>
+        </div>
+      </div>
+      <div class="resumen2">
+        <div class="third borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-clipboard-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z"
+            />
+          </svg>
+          <p id="htitle">Historial Estacionamientos:</p>
+          <div class="historialdata">
+            <article class="historial">
+              <p>Olimpo #1390</p>
+              <p>25/9/2023</p>
+            </article>
+            <article class="historial">
+              <p>Olimpo #1390</p>
+              <p>24/9/2023</p>
+            </article>
+            <article class="historial">
+              <p>Nueva San Martin #138</p>
+              <p>13/8/2023</p>
+            </article>
+            <article class="historial">
+              <p>Avenida Macul #666</p>
+              <p>6/7/2023</p>
+            </article>
+            <article class="historial">
+              <p>Longitudinal #2993</p>
+              <p>11/4/2023</p>
+            </article>
+          </div>
+        </div>
+        <div class="fourth">
+          <div class="sixth borderer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              fill="#294D61"
+              class="bi bi-bar-chart-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"
+              />
+            </svg>
+            <div class="blocksdata">
+              <p>Estacionamientos Usados:</p>
+              <p>25</p>
             </div>
-
-        </article>
-        <article class="parking">
-            <div class="parkicon">P</div>
-            <div class="parkinfo">
-                <p class="street">Avenida Providencia #798</p>
-                <p class="habilitado">Habilitado</p>
-            </div>
-        </article>
-
-        <article class="addparking">
-            + Añadir Estacionamiento
-        </article>
-
-        <div id="division"></div>
-
-        <article class="titulo">
-            <p>Mis Vehiculos</p>
-        </article>
-
-        <article class="vehicle">
-            <div class="caricon">
-                <img src="../../../assets/car.svg">
-            </div>
-            <div class="carinfo">
-                <p class="model">Chery</p>
-                <p class="model">Tiggo 7 Pro</p>
-                <p class="patente">RY·FK·32</p>
-            </div>
-        </article>
-
-        <article class="addparking">
-            + Añadir Vehiculo
-        </article>
-        
-    </aside>
-    <div class="central border">
-
-        <section class="client">
-            <div class="resumen">
-                <div class="first">
-                    media de horas
-                </div>
-                <div class="second">
-                    total gastado
-                </div>
-            </div>
-            <div class="resumen2">
-                <div class="third">
-                    historial de estacionamientos
-                </div>
-                <div class="fourth">
-                    <div class="sixth">
-                        cantidad de estacionamientos usados
-                    </div>
-                    <div class="seventh">
-                        management vehiculos
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="owner">
-            <div class="resumen">
-                <div class="first">
-                    veces arrendado
-                </div>
-                <div class="second">
-                    total ganado
-                </div>
-            </div>
-            <div class="resumen2">
-                <div class="third">
-                    historial de vehiculos estacionados
-                </div>
-                <div class="fourth">
-                    <div class="sixth">
-                        
-                    </div>
-                    <div class="seventh">
-                        management estacionamientos
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
+          </div>
+          <div class="seventh borderer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              fill="#294D61"
+              class="bi bi-grid-3x3-gap-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"
+              />
+            </svg>
+            <button id="AdminB" [routerLink]="['/admincar']">
+              Administrar Vehiculos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="owner">
+      <div class="resumen">
+        <div class="first borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-clipboard2-data-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"
+            />
+            <path
+              d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5ZM10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1Z"
+            />
+          </svg>
+          <div class="blocksdata">
+            <p>Veces Arrendado:</p>
+            <p>23 Veces</p>
+          </div>
+        </div>
+        <div class="second borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-cash-stack"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+            />
+            <path
+              d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"
+            />
+          </svg>
+          <div class="blocksdata">
+            <p>Total Arriendos:</p>
+            <p>$71.200</p>
+          </div>
+        </div>
+      </div>
+      <div class="resumen2">
+        <div class="third borderer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="#294D61"
+            class="bi bi-clipboard-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z"
+            />
+          </svg>
+          <p id="htitle">Historial Clientes:</p>
+          <div class="historialdata">
+            <article class="historial">
+              <p>Samsung Sm3</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>Mercedes benz S550</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>Suzuki Alto</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>BMW 318i</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>Fiat Uno</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>Mazda 323</p>
+              <p>11/4/2023</p>
+            </article>
+            <article class="historial">
+              <p>Ford F150 Raptor</p>
+              <p>11/4/2023</p>
+            </article>
+          </div>
+        </div>
+        <div class="fourth">
+          <div class="sixth borderer"></div>
+          <div class="seventh borderer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              fill="#294D61"
+              class="bi bi-grid-3x3-gap-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"
+              />
+            </svg>
+            <button id="AdminB" [routerLink]="['/adminparking']">
+              Administrar Estacionamientos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>

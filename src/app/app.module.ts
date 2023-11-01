@@ -9,6 +9,8 @@ import { CreditcardComponent } from './components/creditcard/creditcard.componen
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdmincarComponent } from './components/admincar/admincar.component';
+import { AdminparkingComponent } from './components/adminparking/adminparking.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CreditcardComponent,
     HomeComponent,
     ErrorComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdmincarComponent,
+    AdminparkingComponent
   ],
   imports: [
     BrowserModule,
