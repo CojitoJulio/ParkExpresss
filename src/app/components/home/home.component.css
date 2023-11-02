@@ -4,7 +4,7 @@
     position: absolute;
 }
 
-.marker {
+.marcador {
     background-image: url('../../../assets/mapbox-icon.png');
     background-size: cover;
     width: 50px;

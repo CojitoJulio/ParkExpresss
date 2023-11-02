@@ -11,6 +11,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdmincarComponent } from './components/admincar/admincar.component';
 import { AdminparkingComponent } from './components/adminparking/adminparking.component';
+import { AddcarComponent } from './components/addcar/addcar.component';
+import { AddparkingComponent } from './components/addparking/addparking.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AdminparkingComponent } from './components/adminparking/adminparking.co
     ErrorComponent,
     DashboardComponent,
     AdmincarComponent,
-    AdminparkingComponent
+    AdminparkingComponent,
+    AddcarComponent,
+    AddparkingComponent
   ],
   imports: [
     BrowserModule,

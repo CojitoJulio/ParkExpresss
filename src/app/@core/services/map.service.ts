@@ -37,7 +37,7 @@ export class MapService {
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: [-77.032, 38.913],
+            coordinates: { lon: -122.420679, lat: 37.772537 },
           },
           properties: {
             title: 'Mapbox',
@@ -48,7 +48,7 @@ export class MapService {
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: [-122.414, 37.776],
+            coordinates: { lon: -33.432902, lat: -70.615135 },
           },
           properties: {
             title: 'Mapbox',
@@ -62,7 +62,7 @@ export class MapService {
     for (const feature of geojson.features) {
       // create a HTML element for each feature
       const el = document.createElement('div');
-      el.className = 'marker';
+      el.className = 'marcador';
 
       // make a marker for each feature and add to the map
       new mapboxgl.Marker(el)
