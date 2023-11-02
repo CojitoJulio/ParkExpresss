@@ -1,1 +1,68 @@
-<p>addcar works!</p>
+<section>
+  <div class="container">
+    <div
+      class="row d-flex justify-content-center align-items-center h-50"
+      id="login"
+    >
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <div class="pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Añadir Vehiculo</h2>
+              <p class="text-white-50 mb-5">Ingresa los datos de tu vehiculo</p>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeBrandX"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="typeBrandX">Marca</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeModelX"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="typeModelX">Modelo</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typePatenteX"
+                  class="form-control form-control-lg"
+                  maxlength="6"
+                />
+                <label class="form-label" for="typePatenteX">Patente</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typePatenteX"
+                  class="form-control form-control-lg"
+                  maxlength="4"
+                />
+                <label class="form-label" for="typePatenteX">Año</label>
+              </div>
+
+              <button
+                class="btn btn-outline-light btn-lg px-5 mb-3"
+                type="submit"
+                [routerLink]="['/admincar']"
+              >
+                Agregar Vehiculo
+              </button>
+              <p class="small pb-lg-2">
+                <a class="text-white-50" [routerLink]="['/admincar']">Volver</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

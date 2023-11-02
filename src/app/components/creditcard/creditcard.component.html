@@ -1,119 +1,142 @@
 <section>
-    <div class="container">
-      <div class="row d-flex justify-content-center align-items-center h-50">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card bg-dark text-white" style="border-radius: 1rem">
-            <div class="card-body p-5 text-center">
-              <div class=" mt-md-4 pb-5">
-                <h2 class="fw-bold mb-2 text-uppercase">Ingresar Tarjeta de Credito</h2>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <div class="mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">
+                Ingresar Tarjeta de Credito
+              </h2>
 
-                <div class="creditsample mb-4">
-                    <div class="image">
-                        <img src="../../../assets/chip.png" alt="">
-                        <img src="../../../assets/visa.png" alt="">
+              <div class="creditsample mb-4">
+                <div class="image">
+                  <img src="../../../assets/chip.png" alt="" />
+                  <img src="../../../assets/visa.png" alt="" />
+                </div>
+                <div class="card-number-box">{{ cardNumber }}</div>
+                <div class="data">
+                  <div class="box">
+                    <span>Titular de la tarjeta</span>
+                    <div class="card-name">{{ cardName }}</div>
+                  </div>
+                  <div class="box">
+                    <span>Expiracion</span>
+                    <div class="expiration">
+                      <span class="exp-month">{{ cardMonth }}</span>
+                      <span class="exp-year"> / {{ cardYear }}</span>
                     </div>
-                    <div class="card-number-box">################</div>
-                    <div class="data">
-                        <div class="box">
-                            <span>Titular de la tarjeta</span>
-                            <div class="card-name">full name</div>
-                        </div>
-                        <div class="box">
-                            <span>Expiracion</span>
-                            <div class="expiration">
-                                <span class="exp-month">mm</span>
-                                <span class="exp-year">yy</span>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <span>CVV</span>
-                            <div class="cvv">***</div>
-                        </div>
-                    </div>
+                  </div>
+                  <div class="box">
+                    <span>CVV</span>
+                    <div class="cvv">{{ cardCVV }}</div>
+                  </div>
                 </div>
-
-                <div class="form-outline form-white mb-4">
-                    <input 
-                    type="text" 
-                    maxlength="16" 
-                    class="form-control form-control-lg" 
-                    id="TypeCardX"/>
-                    <label class="form-label" for="TypeCardX"
-                      >Numero de Tarjeta
-                    </label>
-                </div>
-
-                <div class="form-outline form-white mb-4">
-                  <input
-                    type="text"
-                    id="typeNameX"
-                    class="form-control form-control-lg"
-                  />
-                  <label class="form-label" for="typeNameX"
-                    >Nombre del Titular</label
-                  >
-                </div>
-
-                <div class="flexbox mb-4">
-                    <div class="ExpirationDate">
-                        <div class="inputBox">
-                            <select id="typeMonthX" class="month-input form-control form-control-lg">
-                                <option value="month" selected disabled>Mes</option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <label class="form-label" for="typeMonthX">
-                                Mes de Expiracion</label>
-                        </div>
-                        <div class="inputBox">
-                            <select id="typeYearX" class="year-input form-control form-control-lg ">
-                                <option value="year" selected disabled>Año</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                                <option value="2028">2028</option>
-                                <option value="2029">2029</option>
-                                <option value="2030">2030</option>
-                                <option value="2021">2031</option>
-                                <option value="2022">2032</option>
-                            </select>
-                            <label class="form-label" for="typeYearX">
-                                Año de Expiracion</label>
-                        </div>
-                        <div class="inputBox">
-                            <input id="typeCVVX" type="text" maxlength="3" class="cvv-input value form-control form-control-lg ">
-                            <label class="form-label" for="typeCVVX">
-                                CVV</label>
-                        </div>
-                    </div>
-                </div>
-  
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">
-                  Agregar Tarjeta
-                </button>
               </div>
-  
-              <div>
-                <p class="mb-0">
-                  <a [routerLink]="['/login']" class="text-white-50 fw-bold">Omitir</a>
-                </p>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  maxlength="16"
+                  class="form-control form-control-lg"
+                  id="TypeCardX"
+                  [(ngModel)]="cardNumber"
+                  (keydown)="soloNumeros($event)"
+                />
+                <label class="form-label" for="TypeCardX"
+                  >Numero de Tarjeta
+                </label>
               </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeNameX"
+                  class="form-control form-control-lg"
+                  [(ngModel)]="cardName"
+                />
+                <label class="form-label" for="typeNameX"
+                  >Nombre del Titular</label
+                >
+              </div>
+
+              <div class="flexbox mb-4">
+                <div class="ExpirationDate">
+                  <div class="inputBox">
+                    <select
+                      id="typeMonthX"
+                      class="month-input form-control form-control-lg"
+                      [(ngModel)]="cardMonth"
+                    >
+                      <option value="month" selected disabled>Mes</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <label class="form-label" for="typeMonthX">
+                      Mes de Expiracion</label
+                    >
+                  </div>
+                  <div class="inputBox">
+                    <select
+                      id="typeYearX"
+                      class="year-input form-control form-control-lg"
+                      [(ngModel)]="cardYear"
+                    >
+                      <option value="year" selected disabled>Año</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                      <option value="2021">2031</option>
+                      <option value="2022">2032</option>
+                    </select>
+                    <label class="form-label" for="typeYearX">
+                      Año de Expiracion</label
+                    >
+                  </div>
+                  <div class="inputBox">
+                    <input
+                      id="typeCVVX"
+                      type="text"
+                      maxlength="3"
+                      class="cvv-input value form-control form-control-lg"
+                      [(ngModel)]="cardCVV"
+                      (keydown)="soloNumeros($event)"
+                    />
+                    <label class="form-label" for="typeCVVX"> CVV</label>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                Agregar Tarjeta
+              </button>
+            </div>
+
+            <div>
+              <p class="mb-0">
+                <a [routerLink]="['/dashboard']" class="text-white-50 fw-bold"
+                  >Omitir</a
+                >
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

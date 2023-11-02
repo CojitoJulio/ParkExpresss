@@ -138,9 +138,13 @@
                   </svg>
                 </div>
               </article>
-              <article class="addparking">+ Añadir Estacionamiento</article>
-              <p class="small mt-5 text-white-50">
-                Se pueden agregar un maximo de 3 Estacionamientos
+              <article class="addparking mb-4" [routerLink]="['/addparking']">
+                + Añadir Estacionamiento
+              </article>
+              <p class="small pb-lg-2">
+                <a class="text-white-50" [routerLink]="['/dashboard']"
+                  >Volver</a
+                >
               </p>
             </div>
           </div>

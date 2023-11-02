@@ -13,6 +13,7 @@ import { AdmincarComponent } from './components/admincar/admincar.component';
 import { AdminparkingComponent } from './components/adminparking/adminparking.component';
 import { AddcarComponent } from './components/addcar/addcar.component';
 import { AddparkingComponent } from './components/addparking/addparking.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,10 @@ import { AddparkingComponent } from './components/addparking/addparking.componen
     AdmincarComponent,
     AdminparkingComponent,
     AddcarComponent,
-    AddparkingComponent
+    AddparkingComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

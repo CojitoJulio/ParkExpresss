@@ -1,1 +1,66 @@
-<p>addparking works!</p>
+<section>
+  <div class="container">
+    <div
+      class="row d-flex justify-content-center align-items-center h-50"
+      id="login"
+    >
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <div class="pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">
+                Añadir Estacionamiento
+              </h2>
+              <p class="text-white-50 mb-5">
+                Ingresa los datos de tu Estacionamiento
+              </p>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeBrandX"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="typeBrandX">Direccion</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeModelX"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="typeModelX"
+                  >Numero de Estacionamiento (Opcional)</label
+                >
+              </div>
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typePatenteX"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="typePatenteX"
+                  >Precio por hora ($)</label
+                >
+              </div>
+
+              <button
+                class="btn btn-outline-light btn-lg px-5 mb-3"
+                type="submit"
+                [routerLink]="['/adminparking']"
+              >
+                Agregar Estacionamiento
+              </button>
+              <p class="small pb-lg-2">
+                <a class="text-white-50" [routerLink]="['/adminparking']"
+                  >Volver</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
