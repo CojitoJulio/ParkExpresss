@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'adminparking', component: AdminparkingComponent },
   { path: 'addcar', component: AddcarComponent },
   { path: 'addparking', component: AddparkingComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
 ];
 
