@@ -7,11 +7,15 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <div class="pb-5">
-              <h2 class="fw-bold mb-2 text-uppercase">Añadir Vehiculo</h2>
-              <p class="text-white-50 mb-5">Ingresa los datos de tu vehiculo</p>
+            <div>
+              <h2 class="fw-bold mb-2 text-uppercase">Añadir Vehículo</h2>
+              <p class="text-white-50 mb-3">Ingresa los datos de tu vehículo</p>
 
-              <div class="form-outline form-white mb-4">
+              <div class="carsample">
+                <img src="../../../assets/carsample.png" alt="" id="car" />
+                <div class="patente">{{ patente }}</div>
+              </div>
+              <div class="form-outline form-white mb-2">
                 <input
                   type="text"
                   id="typeBrandX"
@@ -20,7 +24,7 @@
                 <label class="form-label" for="typeBrandX">Marca</label>
               </div>
 
-              <div class="form-outline form-white mb-4">
+              <div class="form-outline form-white mb-2">
                 <input
                   type="text"
                   id="typeModelX"
@@ -29,24 +33,27 @@
                 <label class="form-label" for="typeModelX">Modelo</label>
               </div>
 
-              <div class="form-outline form-white mb-4">
+              <div class="form-outline form-white mb-2">
                 <input
                   type="text"
                   id="typePatenteX"
                   class="form-control form-control-lg"
                   maxlength="6"
+                  [(ngModel)]="patente"
+                  style="text-transform: uppercase"
                 />
                 <label class="form-label" for="typePatenteX">Patente</label>
               </div>
 
-              <div class="form-outline form-white mb-4">
+              <div class="form-outline form-white mb-2">
                 <input
                   type="text"
-                  id="typePatenteX"
+                  id="typeAnioX"
                   class="form-control form-control-lg"
                   maxlength="4"
+                  (keydown)="soloNumeros($event)"
                 />
-                <label class="form-label" for="typePatenteX">Año</label>
+                <label class="form-label" for="typeAnioX">Año</label>
               </div>
 
               <button

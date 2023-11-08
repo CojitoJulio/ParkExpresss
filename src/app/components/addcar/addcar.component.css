@@ -1,0 +1,35 @@
+.carsample{
+    width: 100%;
+}
+
+#car{
+    width: 400px;
+}
+
+.patente{
+    position: relative;
+    left: 155px;
+    bottom: 100px;
+    width:  120px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    font-size: 25px;
+    text-transform:uppercase
+}
+
+@media only screen and (max-width: 600px) {
+    #car{
+        width: 250px;
+    }
+
+    .patente{
+        bottom: 67px;
+        left: 95px;
+        width: 80px;
+        height: 30px;
+        font-size: 20px;
+    }
+  }
