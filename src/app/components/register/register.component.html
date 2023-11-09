@@ -11,7 +11,11 @@
               </p>
 
               <div class="form-outline form-white mb-4">
-                <input type="text" class="form-control form-control-lg" />
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  [(ngModel)]="userName"
+                />
                 <label class="form-label" for="typeEmailX"
                   >Nombre y Apellido</label
                 >
@@ -22,6 +26,7 @@
                   type="email"
                   id="typeEmailX"
                   class="form-control form-control-lg"
+                  [(ngModel)]="userEmail"
                 />
                 <label class="form-label" for="typeEmailX"
                   >Correo Electronico</label
@@ -32,8 +37,8 @@
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  maxlength="8"
-                  value="+569"
+                  maxlength="9"
+                  [(ngModel)]="userPhone"
                 />
                 <label class="form-label" for="typeEmailX"
                   >Numero de Telefono</label
@@ -45,6 +50,7 @@
                   type="password"
                   id="typePasswordX"
                   class="form-control form-control-lg"
+                  [(ngModel)]="userPassword"
                 />
                 <label class="form-label" for="typePasswordX">Contraseña</label>
               </div>
@@ -53,6 +59,8 @@
                 [routerLink]="['/creditcard']"
                 class="btn btn-outline-light btn-lg px-5"
                 type="submit"
+                (click)="register()"
+                [disabled]="isButtonDisabled"
               >
                 Registrate
               </button>
