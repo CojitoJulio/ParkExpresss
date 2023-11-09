@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,51 +8,42 @@ import * as L from 'leaflet';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  data: any = {};
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    const estacionamientos = [
-      {
-        lon: -33.433157,
-        lat: -70.6157,
-        name: 'Santa Isabel',
-      },
-      {
-        lon: -33.431923,
-        lat: -70.616467,
-        name: 'General del Canto',
-      },
-      {
-        lon: -33.43314,
-        lat: -70.613058,
-        name: 'Fernández Concha',
-      },
-      {
-        lon: -33.434816,
-        lat: -70.616431,
-        name: 'Luis Carrera',
-      },
-    ];
+    this.llenarParkings();
+  }
 
-    const CustomIcon = L.icon({
-      iconUrl: '../../../assets/parking-icon.png',
-      iconSize: [40, 40],
-    });
+  llenarParkings() {
+    this.apiService.getParking().subscribe((data) => {
+      this.data = data;
 
-    const map = L.map('map').setView([-33.433157, -70.6157], 17);
+      const CustomIcon = L.icon({
+        iconUrl: '../../../assets/parking-icon.png',
+        iconSize: [40, 40],
+      });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+      const map = L.map('map').setView([-33.433157, -70.6157], 17);
 
-    estacionamientos.forEach((parking) => {
-      L.marker([parking.lon, parking.lat], {
-        title: parking.name,
-        icon: CustomIcon,
-      })
-        .bindPopup(parking.name)
-        .addTo(map);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      if (Array.isArray(data)) {
+        this.data = data;
+
+        this.data.forEach((item: any) => {
+          L.marker([item.lon, item.lat], {
+            title: item.name,
+            icon: CustomIcon,
+          })
+            .bindPopup(item.name)
+            .addTo(map);
+        });
+      }
     });
   }
 }

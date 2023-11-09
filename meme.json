@@ -1,0 +1,36 @@
+{
+    "database": [{
+      "autos": [{
+        "id": 1,
+        "marca": "nissan",
+        "modelo": "qashqai"
+    }],
+      "usuarios": [{
+        "id": 1,
+        "nombre": "Juanito Perez",
+        "email": "juanito@gmail.com",
+        "password": "juanito123"
+    }],
+      "estacionamientos": [{
+        "lon": -33.433157,
+        "lat": -70.6157,
+        "name": "Santa Isabel"
+      },
+      {
+        "lon": -33.431923,
+        "lat": -70.616467,
+        "name": "General del Canto"
+      },
+      {
+        "lon": -33.43314,
+        "lat": -70.613058,
+        "name": "Fernández Concha"
+      },
+      {
+        "lon": -33.434816,
+        "lat": -70.616431,
+        "name": "Luis Carrera"
+      }]
+    }]
+    
+  }
