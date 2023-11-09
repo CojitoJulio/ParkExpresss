@@ -30,6 +30,13 @@
       "telefono": "341234129",
       "password": "d3few32qfe",
       "id": 3
+    },
+    {
+      "email": "pedrito@gmail.com",
+      "nombre": "Pedro Engel",
+      "telefono": "978458386",
+      "password": "magia1313",
+      "id": 4
     }
   ],
   "estacionamientos": [

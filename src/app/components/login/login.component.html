@@ -2,7 +2,8 @@
   <div class="container">
     <div
       class="row d-flex justify-content-center align-items-center h-50"
-      id="login">
+      id="login"
+    >
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
@@ -15,6 +16,7 @@
                   type="email"
                   id="typeEmailX"
                   class="form-control form-control-lg"
+                  [(ngModel)]="userEmail"
                 />
                 <label class="form-label" for="typeEmailX"
                   >Correo Electronico</label
@@ -26,6 +28,7 @@
                   type="password"
                   id="typePasswordX"
                   class="form-control form-control-lg"
+                  [(ngModel)]="userPass"
                 />
                 <label class="form-label" for="typePasswordX">Contraseña</label>
               </div>
@@ -34,7 +37,10 @@
                 <a class="text-white-50" href="#!">¿Olvidaste tu contraseña?</a>
               </p>
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">
+              <button
+                class="btn btn-outline-light btn-lg px-5"
+                (click)="ingresar()"
+              >
                 Iniciar Sesion
               </button>
             </div>
@@ -42,7 +48,9 @@
             <div>
               <p class="mb-0">
                 ¿No tienes una cuenta?
-                <a [routerLink]="['/register']" class="text-white-50 fw-bold">Registrate</a>
+                <a [routerLink]="['/register']" class="text-white-50 fw-bold"
+                  >Registrate</a
+                >
               </p>
             </div>
           </div>
