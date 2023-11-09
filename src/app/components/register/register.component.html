@@ -4,7 +4,7 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <div class="mb-md-5 mt-md-4 pb-5">
+            <form class="mb-md-5 mt-md-4 pb-5" [formGroup]="miFormulario">
               <h2 class="fw-bold mb-2 text-uppercase">Registro</h2>
               <p class="text-white-50 mb-4">
                 Completa el formulario de registro
@@ -15,6 +15,9 @@
                   type="text"
                   class="form-control form-control-lg"
                   [(ngModel)]="userName"
+                  name="name"
+                  formControlName="name"
+                  required
                 />
                 <label class="form-label" for="typeEmailX"
                   >Nombre y Apellido</label
@@ -27,6 +30,8 @@
                   id="typeEmailX"
                   class="form-control form-control-lg"
                   [(ngModel)]="userEmail"
+                  name="email"
+                  formControlName="correo"
                 />
                 <label class="form-label" for="typeEmailX"
                   >Correo Electronico</label
@@ -39,6 +44,9 @@
                   class="form-control form-control-lg"
                   maxlength="9"
                   [(ngModel)]="userPhone"
+                  name="phone"
+                  formControlName="phone"
+                  required
                 />
                 <label class="form-label" for="typeEmailX"
                   >Numero de Telefono</label
@@ -51,6 +59,9 @@
                   id="typePasswordX"
                   class="form-control form-control-lg"
                   [(ngModel)]="userPassword"
+                  name="pass"
+                  formControlName="pass"
+                  required
                 />
                 <label class="form-label" for="typePasswordX">Contraseña</label>
               </div>
@@ -64,7 +75,7 @@
               >
                 Registrate
               </button>
-            </div>
+            </form>
 
             <div>
               <p class="mb-0">

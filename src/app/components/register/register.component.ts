@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { ApiService } from 'src/app/services/api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  miFormulario!: FormGroup;
+
+  constructor(private apiService: ApiService, private fb: FormBuilder) {}
 
   userName: string = '';
   userPassword: string = '';
@@ -21,6 +24,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.getusers();
+
+    this.miFormulario = this.fb.group({
+      correo: ['', [Validators.required, Validators.email]],
+      pass: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+    });
   }
 
   getusers() {
