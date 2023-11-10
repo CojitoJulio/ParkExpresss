@@ -1,15 +1,17 @@
 .carsample{
     width: 100%;
+    text-align: center;
 }
 
 #car{
-    width: 400px;
+    width: 100%;
 }
 
 .patente{
-    position: relative;
-    left: 155px;
-    bottom: 100px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width:  120px;
     height: 40px;
     background-color: #fff;
@@ -26,8 +28,7 @@
     }
 
     .patente{
-        bottom: 67px;
-        left: 95px;
+        top: 31%;
         width: 80px;
         height: 30px;
         font-size: 20px;
