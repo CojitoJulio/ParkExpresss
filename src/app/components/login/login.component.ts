@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
     this.getusers();
   }
 
+  isFormValid(): boolean {
+    return !!this.userEmail && !!this.userPass;
+  }
+
   getusers() {
     this.apiService.getUsers().subscribe((usuarios) => {
       this.users = usuarios;
@@ -33,8 +37,6 @@ export class LoginComponent implements OnInit {
         this.userEmail == registro.email &&
         this.userPass == registro.password
       ) {
-        console.log('ta bien');
-
         localStorage.setItem(
           'actualuser',
           JSON.stringify({ email: this.userEmail, password: this.userPass })
@@ -42,7 +44,10 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(['/dashboard']);
       } else {
-        console.log(' ta malo');
+        var alerta = document.getElementById('incorrecto');
+        if (alerta) {
+          alerta.style.display = 'block';
+        }
       }
     });
   }

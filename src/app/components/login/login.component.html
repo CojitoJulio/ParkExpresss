@@ -7,7 +7,7 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <div class="mb-md-5 mt-md-4 pb-5">
+            <div class="mb-md-5 mt-md-4 pb-3">
               <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
               <p class="text-white-50 mb-5">Ingresa tu correo y contraseña!</p>
 
@@ -17,6 +17,8 @@
                   id="typeEmailX"
                   class="form-control form-control-lg"
                   [(ngModel)]="userEmail"
+                  required
+                  #name="ngModel"
                 />
                 <label class="form-label" for="typeEmailX"
                   >Correo Electronico</label
@@ -29,6 +31,8 @@
                   id="typePasswordX"
                   class="form-control form-control-lg"
                   [(ngModel)]="userPass"
+                  required
+                  #pass="ngModel"
                 />
                 <label class="form-label" for="typePasswordX">Contraseña</label>
               </div>
@@ -40,9 +44,16 @@
               <button
                 class="btn btn-outline-light btn-lg px-5"
                 (click)="ingresar()"
+                [disabled]="!isFormValid()"
               >
                 Iniciar Sesion
               </button>
+              <div
+                class="alert alert-danger mt-4 blur-in-expand"
+                id="incorrecto"
+              >
+                Usuario o Contraseña incorrectos
+              </div>
             </div>
 
             <div>

@@ -37,6 +37,27 @@
       "telefono": "978458386",
       "password": "magia1313",
       "id": 4
+    },
+    {
+      "email": "DASASD",
+      "nombre": "asdaSD",
+      "telefono": "12341234",
+      "password": "dfasdf",
+      "id": 5
+    },
+    {
+      "email": "danielgutierrez741@gmail.com",
+      "nombre": "Daniel Gutierrez",
+      "telefono": "189267492",
+      "password": "dfasdf",
+      "id": 6
+    },
+    {
+      "email": "crisho@colon.com",
+      "nombre": "Cristobal Colon",
+      "telefono": "666666666",
+      "password": "america1313",
+      "id": 7
     }
   ],
   "estacionamientos": [
@@ -64,6 +85,16 @@
       "lon": -33.43427,
       "lat": -70.616431,
       "name": "Manuel Rodriguez"
+    }
+  ],
+  "tarjetas": [
+    {
+      "nrotarjeta": 289748377216,
+      "titular": "Daniel Gutierrez",
+      "mes": 12,
+      "anio": 2025,
+      "cvv": 964,
+      "idduenio": 6
     }
   ]
 }

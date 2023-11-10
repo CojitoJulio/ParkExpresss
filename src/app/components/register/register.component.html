@@ -4,74 +4,108 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <form class="mb-md-5 mt-md-4 pb-5" [formGroup]="miFormulario">
+            <form
+              class="mb-md-5 mt-md-4 pb-5"
+              [formGroup]="miFormulario"
+              (ngSubmit)="guardar()"
+            >
               <h2 class="fw-bold mb-2 text-uppercase">Registro</h2>
               <p class="text-white-50 mb-4">
                 Completa el formulario de registro
               </p>
-
+              <!-- Nombre -->
               <div class="form-outline form-white mb-4">
                 <input
                   type="text"
+                  id="TypeNameX"
                   class="form-control form-control-lg"
-                  [(ngModel)]="userName"
-                  name="name"
                   formControlName="name"
-                  required
+                  [class.is-invalid]="nombreNoValido"
                 />
-                <label class="form-label" for="typeEmailX"
-                  >Nombre y Apellido</label
+                <label class="form-label" for="typeNameX"
+                  >Nombre y Apellido*</label
+                >
+                <br />
+                <small class="invalid" *ngIf="nombreNoValido"
+                  >Campo vacío o invalido</small
                 >
               </div>
-
+              <!-- Correo -->
               <div class="form-outline form-white mb-4">
                 <input
                   type="email"
                   id="typeEmailX"
                   class="form-control form-control-lg"
-                  [(ngModel)]="userEmail"
-                  name="email"
-                  formControlName="correo"
+                  formControlName="email"
+                  [class.is-invalid]="correoNoValido"
                 />
                 <label class="form-label" for="typeEmailX"
-                  >Correo Electronico</label
+                  >Correo Electronico*</label
+                >
+                <br />
+                <small class="invalid" *ngIf="correoNoValido"
+                  >Campo vacío o correo invalido</small
                 >
               </div>
-
+              <!-- Telefono -->
               <div class="form-outline form-white mb-4">
                 <input
                   type="text"
                   class="form-control form-control-lg"
+                  id="typePhoneX"
                   maxlength="9"
-                  [(ngModel)]="userPhone"
-                  name="phone"
                   formControlName="phone"
-                  required
+                  (keydown)="soloNumeros($event)"
+                  [class.is-invalid]="telefonoNoValido"
                 />
-                <label class="form-label" for="typeEmailX"
-                  >Numero de Telefono</label
+                <label class="form-label" for="typePhoneX"
+                  >Numero de Telefono*</label
+                >
+                <br />
+                <small class="invalid" *ngIf="telefonoNoValido"
+                  >Campo vacío o telefono invalido</small
                 >
               </div>
-
+              <!-- Contraseña -->
               <div class="form-outline form-white mb-4">
                 <input
                   type="password"
                   id="typePasswordX"
                   class="form-control form-control-lg"
-                  [(ngModel)]="userPassword"
-                  name="pass"
-                  formControlName="correo"
-                  required
+                  formControlName="pass"
+                  [class.is-invalid]="passNoValido"
                 />
-                <label class="form-label" for="typePasswordX">Contraseña</label>
+                <label class="form-label" for="typePasswordX"
+                  >Contraseña*</label
+                >
+                <br />
+                <small class="invalid" *ngIf="passNoValido"
+                  >Campo vacío o contraseña invalida</small
+                >
+              </div>
+              <!-- Confirmar Contraseña -->
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="password"
+                  id="typePassword2X"
+                  class="form-control form-control-lg"
+                  formControlName="pass2"
+                  [class.is-invalid]="pass2NoValido"
+                />
+                <label class="form-label" for="typePassword2X"
+                  >Confirmar Contraseña*</label
+                >
+                <br />
+                <small class="invalid" *ngIf="pass2NoValido"
+                  >Campo vacío o contraseña invalida</small
+                >
               </div>
 
               <button
-                [routerLink]="['/creditcard']"
                 class="btn btn-outline-light btn-lg px-5"
                 type="submit"
                 (click)="register()"
-                [disabled]="isButtonDisabled"
+                [disabled]="!isFormValid()"
               >
                 Registrate
               </button>
