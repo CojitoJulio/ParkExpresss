@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 import { Parking } from '../models/parking';
 import { Autos } from '../models/autos';
+import { Tarjeta } from '../models/tarjeta';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class ApiService {
   private urlParking = 'http://localhost:3000/estacionamientos';
   private urlUsers = 'http://localhost:3000/usuarios';
   private urlCars = 'http://localhost:3000/autos';
+  private urlCards = 'http://localhost:3000/tarjetas';
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +22,7 @@ export class ApiService {
   }
 
   public insertParking(parking: Parking): Observable<Parking> {
-    return this.http.post<Parking>(this.urlUsers, parking);
+    return this.http.post<Parking>(this.urlParking, parking);
   }
 
   public getUsers(): Observable<any> {
@@ -36,6 +38,14 @@ export class ApiService {
   }
 
   public insertCar(car: Autos): Observable<Autos> {
-    return this.http.post<Autos>(this.urlUsers, car);
+    return this.http.post<Autos>(this.urlCars, car);
+  }
+
+  public getCards(): Observable<any> {
+    return this.http.get<any>(this.urlCards);
+  }
+
+  public insertCards(card: Tarjeta): Observable<Tarjeta> {
+    return this.http.post<Tarjeta>(this.urlCards, card);
   }
 }

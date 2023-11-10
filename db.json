@@ -58,6 +58,41 @@
       "telefono": "666666666",
       "password": "america1313",
       "id": 7
+    },
+    {
+      "email": "xdjulian5@gmail.com",
+      "nombre": "Julian Gutierrez",
+      "telefono": "946372893",
+      "password": "completo",
+      "id": 8
+    },
+    {
+      "email": "mjtheking@gmail.com",
+      "nombre": "Michael Jackson",
+      "telefono": "912783618",
+      "password": "jiijii",
+      "id": 9
+    },
+    {
+      "email": "steve@odd.com",
+      "nombre": "Steve Lazy",
+      "telefono": "192834712",
+      "password": "onltif",
+      "id": 10
+    },
+    {
+      "email": "tyler@odd.com",
+      "nombre": "Tyler the Creator",
+      "telefono": "678467834",
+      "password": "ithinkidontfall",
+      "id": 11
+    },
+    {
+      "email": "ksajdfkl@asdasd.com",
+      "nombre": "jsdajklfhksdj",
+      "telefono": "345345454",
+      "password": "asdfasdf",
+      "id": 12
     }
   ],
   "estacionamientos": [
@@ -89,12 +124,22 @@
   ],
   "tarjetas": [
     {
+      "id": 1,
       "nrotarjeta": 289748377216,
       "titular": "Daniel Gutierrez",
       "mes": 12,
       "anio": 2025,
       "cvv": 964,
       "idduenio": 6
+    },
+    {
+      "nrotarjeta": "1236782678234891",
+      "titular": "Tyler the Creator",
+      "mes": "10",
+      "anio": "2030",
+      "cvv": "223",
+      "idduenio": 11,
+      "id": 2
     }
   ]
 }

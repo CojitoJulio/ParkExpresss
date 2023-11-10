@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit {
     this.createForm();
   }
 
+  // NoValidos
+
   get nombreNoValido() {
     return (
       this.miFormulario.get('name')?.invalid &&
@@ -55,6 +57,8 @@ export class RegisterComponent implements OnInit {
     );
   }
 
+  // Funcion para solo numeros
+
   soloNumeros(event: any) {
     const tecla = event.key;
     if (
@@ -69,9 +73,13 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  // Variables varias
+
   isButtonDisabled = false;
 
   users: Usuario[] = [];
+
+  // Oninit
 
   ngOnInit() {
     this.getusers();
@@ -115,7 +123,7 @@ export class RegisterComponent implements OnInit {
         control.markAllAsTouched();
       });
     } else {
-      this.register();
+      // this.register();
     }
   }
 
@@ -179,6 +187,19 @@ export class RegisterComponent implements OnInit {
         this.isButtonDisabled = true;
       });
     }
+
+    this.apiService.getUsers().subscribe((usuarios) => {
+      this.users = usuarios;
+
+      this.users.forEach((user) => {
+        if (email === user.email) {
+          localStorage.setItem(
+            'actualuser',
+            JSON.stringify({ email: email, nombre: name, id: user.id })
+          );
+        }
+      });
+    });
 
     this.router.navigate(['/creditcard']);
   }
