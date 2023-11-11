@@ -7,6 +7,38 @@
       "patente": "JDBB85",
       "anio": 2017,
       "idduenio": 1
+    },
+    {
+      "marca": "Samsung",
+      "modelo": "SM3",
+      "patente": "cxtf95",
+      "anio": "2012",
+      "idduenio": 11,
+      "id": 2
+    },
+    {
+      "marca": "Cupra",
+      "modelo": "Formentor VZ",
+      "patente": "SG9282",
+      "anio": "2023",
+      "idduenio": 11,
+      "id": 3
+    },
+    {
+      "marca": "Mercedes Benz",
+      "modelo": "S550",
+      "patente": "SJ1344",
+      "anio": "2009",
+      "idduenio": 11,
+      "id": 4
+    },
+    {
+      "marca": "Mazda",
+      "modelo": "MX-5",
+      "patente": "rptt95",
+      "anio": "2022",
+      "idduenio": 11,
+      "id": 5
     }
   ],
   "usuarios": [
@@ -97,29 +129,88 @@
   ],
   "estacionamientos": [
     {
-      "lon": -33.433157,
-      "lat": -70.6157,
-      "name": "Santa Isabel"
+      "id": 1,
+      "idduenio": 10,
+      "ubicacion": {
+        "lon": -33.433157,
+        "lat": -70.616467
+      },
+      "estado": true,
+      "descrpicion": "Es el primer estacionamiento entrando a la derecha",
+      "precio": 1500,
+      "nroparking": "5A"
     },
     {
-      "lon": -33.431923,
-      "lat": -70.616467,
-      "name": "General del Canto"
+      "id": 2,
+      "idduenio": 6,
+      "ubicacion": {
+        "lon": -33.433157,
+        "lat": -70.6179714202881
+      },
+      "estado": true,
+      "descrpicion": "Es el tercer estacionamiento entrando a la izquierda",
+      "precio": 1500,
+      "nroparking": "22"
     },
     {
-      "lon": -33.43314,
-      "lat": -70.613058,
-      "name": "Fernández Concha"
+      "iddueno": 11,
+      "ubicacion": {
+        "lon": -33.43432184337028,
+        "lat": -70.61440944671632
+      },
+      "estado": false,
+      "descripcion": "es el estacionamiento al lado del conserje",
+      "precio": "4000",
+      "nroparking": "10",
+      "id": 3
     },
     {
-      "lon": -33.434816,
-      "lat": -70.616431,
-      "name": "Luis Carrera"
+      "iddueno": 11,
+      "ubicacion": {
+        "lon": -33.43014691871794,
+        "lat": -70.61657667160036
+      },
+      "estado": false,
+      "descripcion": "es el estacionamiento que está al lado del chevy abandonado",
+      "precio": "3000",
+      "nroparking": "44",
+      "id": 4
     },
     {
-      "lon": -33.43427,
-      "lat": -70.616431,
-      "name": "Manuel Rodriguez"
+      "iddueno": 11,
+      "ubicacion": {
+        "lon": -33.43323847443651,
+        "lat": -70.61334729194643
+      },
+      "estado": false,
+      "descripcion": "El primero",
+      "precio": "900",
+      "nroparking": "12",
+      "id": 5
+    },
+    {
+      "iddueno": 11,
+      "ubicacion": {
+        "lon": -33.43318475331098,
+        "lat": -70.61334729194643
+      },
+      "estado": false,
+      "descripcion": "chulo",
+      "precio": "830",
+      "nroparking": "90",
+      "id": 6
+    },
+    {
+      "iddueno": 11,
+      "ubicacion": {
+        "lon": -33.436466605390336,
+        "lat": -70.61466693878175
+      },
+      "estado": false,
+      "descripcion": "es el estacionamiento que esta en la entrada",
+      "precio": "980",
+      "nroparking": "2",
+      "id": 7
     }
   ],
   "tarjetas": [

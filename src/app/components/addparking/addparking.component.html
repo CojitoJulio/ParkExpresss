@@ -7,7 +7,11 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <div class="pb-5">
+            <form
+              class="pb-5"
+              [formGroup]="miFormulario"
+              (ngSubmit)="guardar()"
+            >
               <h2 class="fw-bold mb-2 text-uppercase">
                 Añadir Estacionamiento
               </h2>
@@ -16,39 +20,52 @@
               </p>
 
               <div class="form-outline form-white mb-4">
-                <input
-                  type="text"
-                  id="typeBrandX"
-                  class="form-control form-control-lg"
-                />
+                <div id="map"></div>
                 <label class="form-label" for="typeBrandX">Direccion</label>
               </div>
 
               <div class="form-outline form-white mb-4">
                 <input
                   type="text"
-                  id="typeModelX"
+                  id="typeNroX"
                   class="form-control form-control-lg"
+                  formControlName="parkingNro"
+                  [class.is-invalid]="nroNoValido"
                 />
-                <label class="form-label" for="typeModelX"
-                  >Numero de Estacionamiento (Opcional)</label
+                <label class="form-label" for="typeNroX"
+                  >Numero de Estacionamiento</label
                 >
               </div>
               <div class="form-outline form-white mb-4">
                 <input
                   type="text"
-                  id="typePatenteX"
+                  id="typePrecioX"
                   class="form-control form-control-lg"
+                  formControlName="parkingPrice"
+                  [class.is-invalid]="priceNoValido"
+                  (keydown)="soloNumeros($event)"
                 />
-                <label class="form-label" for="typePatenteX"
+                <label class="form-label" for="typePrecioX"
                   >Precio por hora ($)</label
+                >
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <textarea
+                  class="form-control form-control-lg"
+                  id="typeDescripcionX"
+                  rows="5"
+                  formControlName="parkingDesc"
+                ></textarea>
+                <label class="form-label" for="typeDescripcionX"
+                  >Descripcion o Intrucciones (Opcional)</label
                 >
               </div>
 
               <button
                 class="btn btn-outline-light btn-lg px-5 mb-3"
                 type="submit"
-                [routerLink]="['/adminparking']"
+                [disabled]="!isFormValid()"
               >
                 Agregar Estacionamiento
               </button>
@@ -57,7 +74,7 @@
                   >Volver</a
                 >
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { ApiService } from 'src/app/services/api.service';
+import 'leaflet-control-geocoder';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +15,22 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.llenarParkings();
+    const map = L.map('map').setView([-33.433157, -70.6157], 17);
+
+    this.llenarParkings(map);
+
+    const CustomIcon = L.icon({
+      iconUrl: '../../../assets/parking-icon.png',
+      iconSize: [40, 40],
+    });
+
+    const markerOptions = {
+      icon: CustomIcon,
+      draggable: true,
+    };
   }
 
-  llenarParkings() {
+  llenarParkings(map: L.Map | L.LayerGroup<any>) {
     this.apiService.getParking().subscribe((data) => {
       this.data = data;
 
@@ -24,8 +38,6 @@ export class HomeComponent implements OnInit {
         iconUrl: '../../../assets/parking-icon.png',
         iconSize: [40, 40],
       });
-
-      const map = L.map('map').setView([-33.433157, -70.6157], 17);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
@@ -36,11 +48,10 @@ export class HomeComponent implements OnInit {
         this.data = data;
 
         this.data.forEach((item: any) => {
-          L.marker([item.lon, item.lat], {
-            title: item.name,
+          L.marker([item.ubicacion.lon, item.ubicacion.lat], {
             icon: CustomIcon,
           })
-            .bindPopup(item.name)
+            .bindPopup('Estacionamiento')
             .addTo(map);
         });
       }

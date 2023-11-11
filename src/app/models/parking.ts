@@ -1,7 +1,12 @@
 export class Parking {
-  'id': number;
+  'id'?: number;
   'iddueno': number;
-  'ubicacion': [];
+  'ubicacion': {
+    lon: number;
+    lat: number;
+  };
   'estado': boolean;
   'descripcion': string;
+  'precio': number;
+  'nroparking': string;
 }

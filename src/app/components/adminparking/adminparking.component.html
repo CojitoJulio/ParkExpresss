@@ -8,10 +8,16 @@
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-4 text-center">
             <div class="mb-md-3 mt-md-4 pb-5">
-              <h2 class="fw-bold mb-2 text-uppercase">Vehiculos Registrados</h2>
+              <h2 class="fw-bold mb-2 text-uppercase">
+                Estacionamientos Registrados
+              </h2>
               <p class="text-white-50 mb-5">
-                Adminsitra tus Vehiculos Registrados
+                Adminsitra tus Estacionamientos Registrados
               </p>
+
+              <ng-template ngFor let-parking [ngForOf]="parkings" let-i="index">
+                <div>{{ parking.precio }}</div>
+              </ng-template>
 
               <article class="vehicle mb-4">
                 <div class="caricon">

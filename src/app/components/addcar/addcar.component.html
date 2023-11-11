@@ -7,21 +7,29 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <div class="card-body p-5 text-center">
-            <div>
+            <form [formGroup]="miFormulario" (ngSubmit)="guardar()">
               <h2 class="fw-bold mb-2 text-uppercase">Añadir Vehículo</h2>
               <p class="text-white-50 mb-3">Ingresa los datos de tu vehículo</p>
 
               <div class="carsample">
                 <img src="../../../assets/carsample.png" alt="" id="car" />
-                <div class="patente">{{ patente }}</div>
+                <div class="patente">
+                  {{ miFormulario.get("carPatente")?.value }}
+                </div>
               </div>
               <div class="form-outline form-white mb-2">
                 <input
                   type="text"
                   id="typeBrandX"
                   class="form-control form-control-lg"
+                  formControlName="carBrand"
+                  [class.is-invalid]="brandNoValido"
                 />
                 <label class="form-label" for="typeBrandX">Marca</label>
+
+                <small class="invalid" *ngIf="brandNoValido">
+                  Campo vacío o menor a 2 digitos</small
+                >
               </div>
 
               <div class="form-outline form-white mb-2">
@@ -29,8 +37,14 @@
                   type="text"
                   id="typeModelX"
                   class="form-control form-control-lg"
+                  formControlName="carModel"
+                  [class.is-invalid]="modelNoValido"
                 />
                 <label class="form-label" for="typeModelX">Modelo</label>
+
+                <small class="invalid" *ngIf="modelNoValido">
+                  Campo vacío o invalido</small
+                >
               </div>
 
               <div class="form-outline form-white mb-2">
@@ -39,10 +53,16 @@
                   id="typePatenteX"
                   class="form-control form-control-lg"
                   maxlength="6"
-                  [(ngModel)]="patente"
                   style="text-transform: uppercase"
+                  formControlName="carPatente"
+                  [class.is-invalid]="patenteNoValido"
+                  (keydown)="soloNumerosYLetras($event)"
                 />
                 <label class="form-label" for="typePatenteX">Patente</label>
+
+                <small class="invalid" *ngIf="patenteNoValido">
+                  Campo vacío o patente Invalida (AA1111 - AAAA11)</small
+                >
               </div>
 
               <div class="form-outline form-white mb-2">
@@ -52,21 +72,27 @@
                   class="form-control form-control-lg"
                   maxlength="4"
                   (keydown)="soloNumeros($event)"
+                  formControlName="carAnio"
+                  [class.is-invalid]="yearNoValido"
                 />
                 <label class="form-label" for="typeAnioX">Año</label>
+
+                <small class="invalid" *ngIf="yearNoValido">
+                  Campo vacío o año menor a 1950</small
+                >
               </div>
 
               <button
                 class="btn btn-outline-light btn-lg px-5 mb-3"
                 type="submit"
-                [routerLink]="['/admincar']"
+                [disabled]="!isFormValid()"
               >
-                Agregar Vehiculo
+                Agregar Vehículo
               </button>
               <p class="small pb-lg-2">
                 <a class="text-white-50" [routerLink]="['/admincar']">Volver</a>
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 export class Autos {
-  'id': number;
+  'id'?: number;
   'marca': string;
   'modelo': string;
   'patente': string;
