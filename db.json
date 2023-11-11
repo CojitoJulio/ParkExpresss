@@ -134,6 +134,7 @@
         "lon": -33.433157,
         "lat": -70.6179714202881
       },
+      "iddueno": 11,
       "estado": false,
       "precio": 1500,
       "nroparking": "22",
@@ -145,6 +146,7 @@
         "lon": -33.433157,
         "lat": -70.6179714202881
       },
+      "iddueno": 6,
       "estado": false,
       "precio": 1500,
       "nroparking": "22",
@@ -152,11 +154,11 @@
     },
     {
       "id": 3,
-      "iddueno": 11,
       "ubicacion": {
         "lon": -33.4367580311029,
         "lat": -70.61899065971376
       },
+      "iddueno": 11,
       "estado": false,
       "descripcion": "Es primer estacionamiento de los verdes y esta en el piso -2",
       "precio": "2000",

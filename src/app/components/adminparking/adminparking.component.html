@@ -15,7 +15,12 @@
                 Adminsitra tus Estacionamientos Registrados
               </p>
 
-              <ng-template ngFor let-parking [ngForOf]="parkings" let-i="index">
+              <ng-template
+                ngFor
+                let-parking
+                [ngForOf]="parkingstotal"
+                let-i="index"
+              >
                 <article class="vehicle mb-4">
                   <div class="caricon">
                     <svg
