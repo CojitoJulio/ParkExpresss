@@ -21,7 +21,22 @@
 
               <div class="form-outline form-white mb-4">
                 <div id="map"></div>
-                <label class="form-label" for="typeBrandX">Direccion</label>
+                <label class="form-label" for="typeBrandX"
+                  >Selecciona la dirección en el mapa</label
+                >
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="text"
+                  id="typeAddressX"
+                  class="form-control form-control-lg"
+                  formControlName="parkingAddress"
+                  [class.is-invalid]="addressNoValido"
+                />
+                <label class="form-label" for="typeAddressX"
+                  >Dirección Exacta y numero</label
+                >
               </div>
 
               <div class="form-outline form-white mb-4">

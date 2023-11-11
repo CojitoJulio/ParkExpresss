@@ -16,10 +16,76 @@
               </p>
 
               <ng-template ngFor let-parking [ngForOf]="parkings" let-i="index">
-                <div>{{ parking.precio }}</div>
+                <article class="vehicle mb-4">
+                  <div class="caricon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="70"
+                      height="70"
+                      fill="blue"
+                      class="bi bi-p-square-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.27 8.074c.893 0 1.419-.545 1.419-1.488s-.526-1.482-1.42-1.482H6.778v2.97H8.27Z"
+                      />
+                      <path
+                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm3.5 4.002h2.962C10.045 4.002 11 5.104 11 6.586c0 1.494-.967 2.578-2.55 2.578H6.784V12H5.5V4.002Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="carinfo">
+                    <p class="model">{{ parking.direccion }}</p>
+                    <div class="status">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="options-outlined-{{ parking.id }}"
+                        id="success-outlined-{{ parking.id }}"
+                        autocomplete="off"
+                        [checked]="parking.estado === true"
+                        (click)="updateStatus(parking, true, parking.id!)"
+                      />
+                      <label
+                        class="btn btn-outline-success"
+                        for="success-outlined-{{ parking.id }}"
+                        >Habilitado</label
+                      >
+
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="options-outlined-{{ parking.id }}"
+                        id="danger-outlined-{{ parking.id }}"
+                        autocomplete="off"
+                        [checked]="parking.estado === false"
+                        (click)="updateStatus(parking, false, parking.id!)"
+                      />
+                      <label
+                        class="btn btn-outline-danger"
+                        for="danger-outlined-{{ parking.id }}"
+                        >Deshabilitado</label
+                      >
+                    </div>
+                  </div>
+                  <div class="deleteicon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      fill="crimson"
+                      class="bi bi-trash3-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"
+                      />
+                    </svg>
+                  </div>
+                </article>
               </ng-template>
 
-              <article class="vehicle mb-4">
+              <!-- <article class="vehicle mb-4">
                 <div class="caricon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +209,7 @@
                     />
                   </svg>
                 </div>
-              </article>
+              </article> -->
               <article class="addparking mb-4" [routerLink]="['/addparking']">
                 + Añadir Estacionamiento
               </article>

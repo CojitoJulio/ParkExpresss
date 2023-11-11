@@ -9,4 +9,5 @@ export class Parking {
   'descripcion': string;
   'precio': number;
   'nroparking': string;
+  'direccion': string;
 }

@@ -48,4 +48,11 @@ export class ApiService {
   public insertCards(card: Tarjeta): Observable<Tarjeta> {
     return this.http.post<Tarjeta>(this.urlCards, card);
   }
+
+  public updateParking(parkingtoUpdate: Parking): Observable<any> {
+    return this.http.put(
+      `${this.urlParking}/${parkingtoUpdate.id}`,
+      parkingtoUpdate
+    );
+  }
 }

@@ -34,6 +34,13 @@ export class AddparkingComponent implements OnInit {
 
   // Validaciones
 
+  get addressNoValido() {
+    return (
+      this.miFormulario.get('parkingAddress')?.invalid &&
+      this.miFormulario.get('parkingAddress')?.touched
+    );
+  }
+
   get nroNoValido() {
     return (
       this.miFormulario.get('parkingNro')?.invalid &&
@@ -103,6 +110,7 @@ export class AddparkingComponent implements OnInit {
     const nro = this.miFormulario.get('parkingNro')?.value;
     const price = this.miFormulario.get('parkingPrice')?.value;
     const desc = this.miFormulario.get('parkingDesc')?.value;
+    const adress = this.miFormulario.get('parkingAddress')?.value;
 
     if (nro && price) {
       const parkingsite: Parking = {
@@ -112,6 +120,7 @@ export class AddparkingComponent implements OnInit {
         descripcion: desc,
         precio: price,
         nroparking: nro,
+        direccion: adress,
       };
 
       this.apiService.insertParking(parkingsite).subscribe((data) => {
@@ -156,6 +165,7 @@ export class AddparkingComponent implements OnInit {
 
   createForm() {
     this.miFormulario = this.fb.group({
+      parkingAddress: ['', Validators.required],
       parkingNro: ['', Validators.required],
       parkingPrice: ['', Validators.required],
       parkingDesc: ['', Validators.required],
@@ -179,7 +189,8 @@ export class AddparkingComponent implements OnInit {
   isFormValid(): boolean {
     const nro = this.miFormulario.get('parkingNro')?.value;
     const price = this.miFormulario.get('parkingPrice')?.value;
+    const adress = this.miFormulario.get('parkingAddress')?.value;
 
-    return !!nro && !!price;
+    return !!nro && !!price && !!adress;
   }
 }
