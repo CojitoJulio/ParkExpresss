@@ -49,7 +49,7 @@
                         id="success-outlined-{{ parking.id }}"
                         autocomplete="off"
                         [checked]="parking.estado === true"
-                        (click)="updateStatus(parking, true, parking.id!)"
+                        (click)="updateStatus(true, parking.id!)"
                       />
                       <label
                         class="btn btn-outline-success"
@@ -64,7 +64,7 @@
                         id="danger-outlined-{{ parking.id }}"
                         autocomplete="off"
                         [checked]="parking.estado === false"
-                        (click)="updateStatus(parking, false, parking.id!)"
+                        (click)="updateStatus(false, parking.id!)"
                       />
                       <label
                         class="btn btn-outline-danger"

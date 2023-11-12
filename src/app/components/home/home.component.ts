@@ -18,16 +18,10 @@ export class HomeComponent implements OnInit {
     const map = L.map('map').setView([-33.433157, -70.6157], 17);
 
     this.llenarParkings(map);
+  }
 
-    const CustomIcon = L.icon({
-      iconUrl: '../../../assets/parking-icon.png',
-      iconSize: [40, 40],
-    });
-
-    const markerOptions = {
-      icon: CustomIcon,
-      draggable: true,
-    };
+  private markerClick(e: L.LeafletEvent) {
+    console.log('Marcador clicado:', e.target);
   }
 
   llenarParkings(map: L.Map | L.LayerGroup<any>) {
@@ -48,11 +42,13 @@ export class HomeComponent implements OnInit {
         this.data = data;
 
         this.data.forEach((item: any) => {
-          L.marker([item.ubicacion.lon, item.ubicacion.lat], {
-            icon: CustomIcon,
-          })
-            .bindPopup('Estacionamiento')
-            .addTo(map);
+          if (item.estado) {
+            L.marker([item.ubicacion.lon, item.ubicacion.lat], {
+              icon: CustomIcon,
+            })
+              .addTo(map)
+              .on('click', this.markerClick.bind(this));
+          }
         });
       }
     });

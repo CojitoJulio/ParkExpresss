@@ -29,7 +29,7 @@
       "modelo": "S550",
       "patente": "SJ1344",
       "anio": "2009",
-      "idduenio": 11,
+      "idduenio": 7,
       "id": 4
     },
     {
@@ -135,7 +135,7 @@
         "lat": -70.6179714202881
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "precio": 1500,
       "nroparking": "22",
       "direccion": "Avenida Sur #2280"
@@ -147,7 +147,7 @@
         "lat": -70.6179714202881
       },
       "iddueno": 6,
-      "estado": false,
+      "estado": true,
       "precio": 1500,
       "nroparking": "22",
       "direccion": "Avenida Manuel Montt #1552"
@@ -159,11 +159,37 @@
         "lat": -70.61899065971376
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "descripcion": "Es primer estacionamiento de los verdes y esta en el piso -2",
       "precio": "2000",
       "nroparking": "25",
       "direccion": "Avenida Jose Miguel Claro #998"
+    },
+    {
+      "id": 4,
+      "ubicacion": {
+        "lon": -33.43492918073527,
+        "lat": -70.61235212539529
+      },
+      "iddueno": 11,
+      "estado": true,
+      "descripcion": "es el lindo",
+      "precio": "800",
+      "nroparking": "T3",
+      "direccion": "Silvina Hurtado 2333"
+    },
+    {
+      "id": 5,
+      "ubicacion": {
+        "lon": -33.430391955201976,
+        "lat": -70.61411466115294
+      },
+      "iddueno": 11,
+      "estado": true,
+      "descripcion": "Es el estacionamiento 3",
+      "precio": "1200",
+      "nroparking": "3",
+      "direccion": "Calvo Mackenna #888"
     }
   ],
   "tarjetas": [

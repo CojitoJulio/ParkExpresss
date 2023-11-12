@@ -39,7 +39,11 @@ export class LoginComponent implements OnInit {
       ) {
         localStorage.setItem(
           'actualuser',
-          JSON.stringify({ email: this.userEmail, password: this.userPass })
+          JSON.stringify({
+            email: this.userEmail,
+            password: this.userPass,
+            id: registro.id,
+          })
         );
 
         this.router.navigate(['/dashboard']);

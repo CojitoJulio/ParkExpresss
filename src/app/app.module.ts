@@ -16,6 +16,7 @@ import { AdmincarComponent } from './components/admincar/admincar.component';
 import { AdminparkingComponent } from './components/adminparking/adminparking.component';
 import { AddcarComponent } from './components/addcar/addcar.component';
 import { AddparkingComponent } from './components/addparking/addparking.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AddparkingComponent } from './components/addparking/addparking.componen
     AdminparkingComponent,
     AddcarComponent,
     AddparkingComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

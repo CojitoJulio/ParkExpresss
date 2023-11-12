@@ -1,6 +1,181 @@
-.map-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+#map {
+  border-radius: 15px;
 }
 
+.map_container {
+  padding: 0 50px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.infoBox {
+  border-radius: 15px;
+  background-color: #747474;
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.firstblock,
+.secondblock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+
+.ownerInfo {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  gap: 10px;
+}
+
+.bor {
+  border-radius: 15px;
+}
+
+.photo,
+.info,
+.price,
+.nroPark {
+  height: 200px;
+  width: 50%;
+  background-color: #252525;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nombre {
+  height: 50%;
+  padding-top: 20px;
+}
+
+.info p {
+  width: auto;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 19px;
+  padding: 0 10px;
+}
+
+.tight {
+  height: 120px;
+  background-color: #252525;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 0 30px;
+}
+
+.parkInfo {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  gap: 10px;
+}
+
+.price,
+.nroPark,
+.desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  height: 120px;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+#titular {
+  height: 20%;
+}
+
+#description {
+  height: auto;
+}
+
+.division {
+  height: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.line {
+  height: 1px;
+  width: auto;
+  background-color: #fff;
+  margin: 20px 50px;
+  border-radius: 50px;
+}
+
+#arrendar {
+  margin: 10px;
+  width: 600px;
+  height: 80px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#arrendar:hover {
+  background-color: #c0c0c0;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 800px) {
+  .infoBox {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .line {
+    margin: 10px 10px;
+  }
+
+  .map_container {
+    padding: 10px;
+  }
+
+  .tight {
+    height: 100px;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  #arrendar {
+    width: 100%;
+  }
+}
