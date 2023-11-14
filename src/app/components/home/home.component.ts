@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { ApiService } from 'src/app/services/api.service';
 import 'leaflet-control-geocoder';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
+import { Parking } from 'src/app/models/parking';
 
 @Component({
   selector: 'app-home',
@@ -19,9 +20,33 @@ export class HomeComponent implements OnInit {
 
     this.llenarParkings(map);
   }
+  actualparking: any = [];
 
   private markerClick(e: L.LeafletEvent) {
-    console.log('Marcador clicado:', e.target);
+    this.actualparking = [];
+
+    this.data.forEach((item: any) => {
+      if (
+        item.ubicacion.lon == e.target._latlng.lat &&
+        item.ubicacion.lat == e.target._latlng.lng
+      ) {
+        this.actualparking.push(item);
+      }
+    });
+
+    this.apiService.getUsers().subscribe((users) => {
+      users.forEach((user: any) => {
+        if (this.actualparking[0].iddueno == user.id) {
+          this.actualparking.push(user);
+        }
+      });
+    });
+
+    console.log(this.actualparking);
+  }
+
+  get actualparkingExists(): boolean {
+    return this.actualparking.length > 0;
   }
 
   llenarParkings(map: L.Map | L.LayerGroup<any>) {
@@ -47,6 +72,7 @@ export class HomeComponent implements OnInit {
               icon: CustomIcon,
             })
               .addTo(map)
+              .bindPopup(item.direccion)
               .on('click', this.markerClick.bind(this));
           }
         });

@@ -1,377 +1,385 @@
-
-main{
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 90%;
-} 
-
-.titulo{
-    width: 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 20px;
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: auto;
 }
 
-.border{
-    border-radius: 20px;
-    margin: 10px;
-    background-color: rgb(245,245,251);
+.titulo {
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
-.side{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.border {
+  border-radius: 20px;
+  margin: 10px;
+  background-color: rgb(245, 245, 251);
 }
 
-.parking{
-    width: 320px;
-    height: 140px;
-    border-radius: 10px;
-    background-color: #fff;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #acacac;
-    display: grid;
-    grid-template-columns: 25% 80%;
-    transition: 0.2s;
-    cursor: pointer;
+.side {
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  width: 450px;
+  overflow-y: scroll;
 }
 
-.parking:hover{
-    box-shadow: 5px 6px 11px -4px rgba(0,0,0,0.75);
-    transition: 0.2s;
+.parking {
+  width: 320px;
+  height: 140px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #acacac;
+  display: grid;
+  grid-template-columns: 25% 80%;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.parkinfo{
-    font-size: 20px;
-    font-weight: 600;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+.parking:hover {
+  box-shadow: 5px 6px 11px -4px rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+
+.parkinfo {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .parkstatus {
-    width: 150px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 35px;
-    padding: 5px;
-    color: white;
-    &.deshabilitado {
-      background-color: crimson;
-    }
-    &.habilitado {
-      background-color: green;
-    }
+  width: 150px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 35px;
+  padding: 5px;
+  color: white;
+  &.deshabilitado {
+    background-color: crimson;
   }
-
-
-.parkicon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    background-color: blue;
-    font-size: 50px;
-    color: white;
-    border-radius: 20px;
-    font-weight: bold;
-    padding: 10px;
+  &.habilitado {
+    background-color: green;
+  }
 }
 
-
-#division{
-    width: auto;
-    height: 3px;
-    background-color: #acacac;
-    margin: 10px;
-    border-radius: 30px;
+.parkicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  font-size: 50px;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px;
 }
 
-.addparking{
-    width: 320px;
-    height: 80px;
-    background-color: #e5e5e5;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-    cursor: pointer;
+#division {
+  width: auto;
+  height: 3px;
+  background-color: #acacac;
+  margin: 10px;
+  border-radius: 30px;
 }
 
-.addparking:hover, #AdminB:hover{
-    background-color: #c0c0c0;
-    transition: 0.2s;
+.addparking {
+  width: 320px;
+  height: 80px;
+  background-color: #e5e5e5;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.addparking:hover,
+#AdminB:hover {
+  background-color: #c0c0c0;
+  transition: 0.2s;
 }
 
 /* Vehiculo */
 
-.vehicle{
-    width: 320px;
-    height: 140px;
-    border-radius: 10px;
-    background-color: #fff;
-    margin: 10px;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    border: 1px solid #acacac;
-    transition: 0.2s;
-    cursor: pointer;
+.vehicle {
+  width: 320px;
+  height: 140px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  border: 1px solid #acacac;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.vehicle:hover{
-    box-shadow: 5px 6px 11px -4px rgba(0,0,0,0.75);
-    transition: 0.2s;
+.vehicle:hover {
+  box-shadow: 5px 6px 11px -4px rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
 }
 
-.caricon{
-    align-items: center;
-    margin-left: 5px;
+.caricon {
+  align-items: center;
+  margin-left: 5px;
 }
 
-.caricon img{
-    width: 100px;
+.caricon img {
+  width: 100px;
 }
 
-.carinfo{
-    border-left: 1px solid #acacac;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding-left: 10px;
+.carinfo {
+  border-left: 1px solid #acacac;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 10px;
 }
 
-.carinfo p{
-    margin: 0;
+.carinfo p {
+  margin: 0;
 }
 
-.model{
-    font-weight: bold;
-    font-size: 20px;
+.model {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.patente{
-    border: 1px solid #acacac;
-    border-radius: 10px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 27px;
-    font-weight: bold;
+.patente {
+  border: 1px solid #acacac;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: bold;
 }
 
 /* Central */
 
-.central{
-    width: 100%;
-    height: 100%;
-    display: flex
+.central {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 /* Cliente */
 
-.client, .owner{
-    width: 50%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+.client,
+.owner {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.resumen{
-    width: auto;
-    height: 250px;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
+.resumen {
+  width: auto;
+  height: 250px;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
 }
 
-.borderer{
-    border: 2px solid #acacac;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.borderer {
+  border: 2px solid #acacac;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.blocksdata{
-    width: 100%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 500;
+.blocksdata {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
 }
 
-.blocksdata p{
-    margin: 0;
-    text-align: center;
+.blocksdata p {
+  margin: 0;
+  text-align: center;
 }
 
-.first, .second{
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
+.first,
+.second {
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
 }
 
-.resumen2{
-    height: auto;
-    width: 100%;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
+.resumen2 {
+  height: auto;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
 }
 
-.third{
-    height: 520px;
-    width: 50%;
-    border-radius: 10px;
+.third {
+  height: 520px;
+  width: 50%;
+  border-radius: 10px;
 }
 
-.fourth{
-    height: 520px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.fourth {
+  height: 520px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.sixth, .seventh{
-    height: 50%;
-    border-radius: 10px;
+.sixth,
+.seventh {
+  height: 50%;
+  border-radius: 10px;
 }
 
-.historialdata{
-    margin-top: 15px;
-    width: 100%;
-    height: 85%;
-    overflow-y: scroll;
+.historialdata {
+  margin-top: 15px;
+  width: 100%;
+  height: 85%;
+  overflow-y: scroll;
 }
 
-.historial{
-    width: 100%;
-    height: 60px;
-    padding: 5px;
-    font-size: large;
+.historial {
+  width: 100%;
+  height: 60px;
+  padding: 5px;
+  font-size: large;
 }
 
-.historial p{
-    margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.historial p {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.historial:nth-child(even){
-    background-color: #e5e5e5;
+.historial:nth-child(even) {
+  background-color: #e5e5e5;
 }
 
-.historial:nth-child(odd){
-    background-color: #cfcfcf;
+.historial:nth-child(odd) {
+  background-color: #cfcfcf;
 }
 
-#AdminB{
-    border: none;
-    background-color: #e5e5e5;
-    border-radius: 15px;
-    height: 70px;
-    margin-top: 40px;
-    font-size: 20px;
-    width: 100%;
+#AdminB {
+  border: none;
+  background-color: #e5e5e5;
+  border-radius: 15px;
+  height: 70px;
+  margin-top: 40px;
+  font-size: 20px;
+  width: 100%;
 }
 
-#htitle{
-    font-size: 24px;
-    font-weight: 500;
-    margin: 0;
-    text-align: center;
+#htitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
-    .resumen{
-        flex-direction: column;
-        height: 400px;
-        gap: 25px;
-    }
-    .first, .second{
-        width: 100%;
-    }
-    .resumen2{
-        flex-direction: column;
-    }
-    .third, .fourth{
-        width: 100%;
-    }
+  .resumen {
+    flex-direction: column;
+    height: 400px;
+    gap: 25px;
+  }
+  .first,
+  .second {
+    width: 100%;
+  }
+  .resumen2 {
+    flex-direction: column;
+  }
+  .third,
+  .fourth {
+    width: 100%;
+  }
 }
 
 /* Responsive */
 
 @media only screen and (max-width: 600px) {
-    main{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .side{
-        height: auto;
-    }
-
-    .street{
-        height: 25px;
-    }
-
-    .addparking{
-        height: 90px;
-    }
-
-    .titulo{
-        width: auto;
-    }
-
-    .habilitado, .deshabilitado{
-        margin-top: 30px;
-    }
-
-    .parking{
-        width: auto;
-        height: 150px;
-        padding: 20px;
-    }
-
-    .vehicle{
-        width: auto;
-    }
-
-    .central{
-        width: auto;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .client, .owner{
-        width: 100%;
-    }
-
-    .caricon{
-        margin-left: 15px;
-    }
-
-    .addparking{
-        width: auto;
-    }
-
-    .test{
-        width: 100%;
-    }
+  main {
+    display: flex;
+    flex-direction: column;
   }
+
+  .side {
+    height: auto;
+    width: auto;
+  }
+
+  .street {
+    height: 25px;
+  }
+
+  .addparking {
+    height: 90px;
+  }
+
+  .titulo {
+    width: auto;
+  }
+
+  .habilitado,
+  .deshabilitado {
+    margin-top: 30px;
+  }
+
+  .parking {
+    width: auto;
+    height: 150px;
+    padding: 20px;
+  }
+
+  .vehicle {
+    width: auto;
+  }
+
+  .central {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .client,
+  .owner {
+    width: 100%;
+  }
+
+  .caricon {
+    margin-left: 15px;
+  }
+
+  .addparking {
+    width: auto;
+  }
+
+  .test {
+    width: 100%;
+  }
+}

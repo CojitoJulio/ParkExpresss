@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Parking } from 'src/app/models/parking';
 import { Usuario } from 'src/app/models/usuario';
 import { ApiService } from 'src/app/services/api.service';
-import { forkJoin } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -21,6 +20,10 @@ export class AdminparkingComponent implements OnInit {
 
   ngOnInit() {
     this.getuser();
+    this.getparkings();
+  }
+
+  getparkings() {
     this.apiService
       .getParking()
       .pipe(

@@ -3,28 +3,49 @@
     <article class="titulo">
       <p>Mis Estacionamientos</p>
     </article>
-    <article class="parking">
-      <div class="parkicon">P</div>
-      <div class="parkinfo">
-        <p class="street">Avenida Siempre Viva #2189</p>
-        <p class="parkstatus deshabilitado">Deshabilitado</p>
-      </div>
-    </article>
-    <article class="parking">
-      <div class="parkicon">P</div>
-      <div class="parkinfo">
-        <p class="street">Avenida Providencia #798</p>
-        <p class="parkstatus habilitado">Habilitado</p>
-      </div>
-    </article>
 
-    <article class="addparking">+ Añadir Estacionamiento</article>
+    <ng-template ngFor let-parking [ngForOf]="parkingstotal" let-i="index">
+      <article class="parking">
+        <div class="parkicon">P</div>
+        <div class="parkinfo">
+          <p class="street">{{ parking.direccion }}</p>
+          <p
+            class="parkstatus"
+            [ngClass]="{
+              habilitado: parking.estado,
+              deshabilitado: !parking.estado
+            }"
+          >
+            {{ parking.estado ? "Habilitado" : "Deshabilitado" }}
+          </p>
+        </div>
+      </article>
+    </ng-template>
+
+    <button class="addparking" [routerLink]="['/addparking']">
+      + Añadir Estacionamiento
+    </button>
 
     <div id="division"></div>
 
     <article class="titulo">
       <p>Mis Vehiculos</p>
     </article>
+
+    <ng-template ngFor let-car [ngForOf]="carsactual" let-i="index">
+      <article class="vehicle">
+        <div class="caricon">
+          <img src="../../../assets/car.svg" />
+        </div>
+        <div class="carinfo">
+          <p class="model">{{ car.marca }}</p>
+          <p class="model">{{ car.modelo }}</p>
+          <p class="patente">
+            {{ formatPatente(car.patente).toUpperCase() }}
+          </p>
+        </div>
+      </article>
+    </ng-template>
 
     <article class="vehicle">
       <div class="caricon">
@@ -37,7 +58,9 @@
       </div>
     </article>
 
-    <article class="addparking">+ Añadir Vehiculo</article>
+    <article class="addparking" [routerLink]="['/addcar']">
+      + Añadir Vehiculo
+    </article>
   </aside>
   <div class="central border">
     <section class="client">

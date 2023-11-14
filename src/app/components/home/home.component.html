@@ -2,7 +2,7 @@
   <div id="map" style="height: 700px"></div>
 </div>
 
-<ng-container>
+<ng-container *ngIf="actualparkingExists">
   <div class="line"></div>
 
   <main>
@@ -27,15 +27,15 @@
           <div class="info bor">
             <div class="nombre">
               <p>Nombre del dueño:</p>
-              <p>Daniel Gutierrez</p>
+              <p>{{ actualparking[1].nombre }}</p>
             </div>
             <div class="number">
               <p>Numero de contacto:</p>
-              <p>+56978458386</p>
+              <p>+56 {{ actualparking[1].telefono }}</p>
             </div>
           </div>
         </div>
-        <div class="address bor tight">Av Sur #2270</div>
+        <div class="address bor tight">{{ actualparking[0].direccion }}</div>
       </div>
       <div class="secondblock">
         <div class="parkInfo">
@@ -64,7 +64,7 @@
                 />
               </svg>
             </div>
-            <div class="division">$3000/hr</div>
+            <div class="division">${{ actualparking[0].precio }}/hr</div>
           </div>
           <div class="nroPark bor">
             <div class="division">
@@ -84,12 +84,12 @@
                 />
               </svg>
             </div>
-            <div class="division">Nro: 25</div>
+            <div class="division">Nro: {{ actualparking[0].nroparking }}</div>
           </div>
         </div>
         <div class="desc bor tight">
           <p id="titular">Descripcion o instrucciones:</p>
-          <p id="description">Es el primer estacionamiento a la derecha</p>
+          <p id="description">{{ actualparking[0].descripcion }}</p>
         </div>
       </div>
     </article>
