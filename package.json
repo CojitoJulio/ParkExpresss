@@ -26,6 +26,7 @@
     "leaflet-control-geocoder": "^2.4.0",
     "leaflet-geosearch": "^3.10.2",
     "mapbox-gl": "^2.15.0",
+    "ngx-cookie-service": "^16.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
