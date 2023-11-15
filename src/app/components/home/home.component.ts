@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { ApiService } from 'src/app/services/api.service';
 import 'leaflet-control-geocoder';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
+import { NavigationExtras, Router } from '@angular/router';
 import { Parking } from 'src/app/models/parking';
 
 @Component({
@@ -13,7 +14,7 @@ import { Parking } from 'src/app/models/parking';
 export class HomeComponent implements OnInit {
   data: any = {};
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit() {
     const map = L.map('map').setView([-33.433157, -70.6157], 17);
@@ -78,5 +79,19 @@ export class HomeComponent implements OnInit {
         });
       }
     });
+  }
+
+  prueba(actualpark: Parking) {
+    console.log(actualpark);
+  }
+
+  rent(actualpark: number) {
+    localStorage.setItem(
+      'idparkselected',
+      JSON.stringify({
+        id: actualpark,
+      })
+    );
+    this.router.navigate(['/rentselection']);
   }
 }

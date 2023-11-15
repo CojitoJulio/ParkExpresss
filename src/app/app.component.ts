@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  actualuser: boolean;
+  isLoggedIn = false;
 
-  constructor() {
-    this.actualuser = localStorage.getItem('actualuser') !== null;
+  constructor(private authservice: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    this.authservice.isLogged$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
+
+    console.log(this.isLoggedIn);
   }
 
-  ngOnInit() {}
+  logout() {
+    localStorage.removeItem('actualuser');
+    this.router.navigate(['/main']);
+    this.authservice.logout();
+  }
 }

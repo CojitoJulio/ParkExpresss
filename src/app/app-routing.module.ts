@@ -13,18 +13,51 @@ import { AddcarComponent } from './components/addcar/addcar.component';
 import { AddparkingComponent } from './components/addparking/addparking.component';
 import { MainComponent } from './components/main/main.component';
 import { authGuard } from './guards/auth.guard';
+import { LoggedGuard } from './guards/logged.guard';
+import { RentselectionComponent } from './components/rentselection/rentselection.component';
+import { RentprocessComponent } from './components/rentprocess/rentprocess.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'creditcard', component: CreditcardComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LoggedGuard] },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [LoggedGuard],
+  },
+  {
+    path: 'creditcard',
+    component: CreditcardComponent,
+    canActivate: [authGuard],
+  },
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'admincar', component: AdmincarComponent },
-  { path: 'adminparking', component: AdminparkingComponent },
-  { path: 'addcar', component: AddcarComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'admincar', component: AdmincarComponent, canActivate: [authGuard] },
+  {
+    path: 'adminparking',
+    component: AdminparkingComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'addcar', component: AddcarComponent, canActivate: [authGuard] },
   { path: 'main', component: MainComponent },
-  { path: 'addparking', component: AddparkingComponent },
+  {
+    path: 'addparking',
+    component: AddparkingComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'rentselection',
+    component: RentselectionComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'rentprocess',
+    component: RentprocessComponent,
+    canActivate: [authGuard],
+  },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
 ];

@@ -135,7 +135,7 @@
         "lat": -70.6179714202881
       },
       "iddueno": 11,
-      "estado": true,
+      "estado": false,
       "precio": 1500,
       "nroparking": "22",
       "direccion": "Avenida Sur #2280"
@@ -212,8 +212,55 @@
       "id": 2
     }
   ],
-  "login": {
-    "id": 0,
-    "token_acces": "12y3e8712h3"
-  }
+  "actualrent": [
+    {
+      "id": 0,
+      "idduenio": 11,
+      "idcliente": 7,
+      "idparking": 5,
+      "idauto": 3,
+      "horainicial": "18:31:57",
+      "fecha": "18-11-2023",
+      "tiempo": 123419,
+      "deuda": true
+    },
+    {
+      "idduenio": 11,
+      "idcliente": 11,
+      "idparking": 5,
+      "idauto": 0,
+      "horainicial": "23:15:46",
+      "fecha": "14-11-2023",
+      "tiempo": 1700014546979,
+      "deuda": true,
+      "id": 1
+    }
+  ],
+  "boletas": [
+    {
+      "id": 0,
+      "idduenio": 11,
+      "idcliente": 7,
+      "idparking": 5,
+      "horainicial": "18:31:57",
+      "horatermino": "19:01:22",
+      "fecha": "18-11-2023",
+      "tiempototal": 123419,
+      "total": 8500,
+      "deuda": true
+    },
+    {
+      "id": 1,
+      "idduenio": 11,
+      "idcliente": 5,
+      "idparking": 4,
+      "horainicial": "12:40:21",
+      "horatermino": "12:45:54",
+      "fecha": "18-11-2023",
+      "tiempototal": 2783,
+      "total": 1200,
+      "deuda": false,
+      "idauto": 3
+    }
+  ]
 }

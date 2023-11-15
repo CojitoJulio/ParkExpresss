@@ -5,6 +5,7 @@ import { Usuario } from '../models/usuario';
 import { Parking } from '../models/parking';
 import { Autos } from '../models/autos';
 import { Tarjeta } from '../models/tarjeta';
+import { Actualrent } from '../models/actualrent';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ export class ApiService {
   private urlUsers = 'http://localhost:3000/usuarios';
   private urlCars = 'http://localhost:3000/autos';
   private urlCards = 'http://localhost:3000/tarjetas';
+  private rentCards = 'http://localhost:3000/actualrent';
 
   constructor(private http: HttpClient) {}
 
@@ -54,5 +56,13 @@ export class ApiService {
       `${this.urlParking}/${parkingtoUpdate.id}`,
       parkingtoUpdate
     );
+  }
+
+  public insertActualRent(rent: Actualrent): Observable<Actualrent> {
+    return this.http.post<Actualrent>(this.rentCards, rent);
+  }
+
+  public getActualRent(): Observable<any> {
+    return this.http.get<any>(this.rentCards);
   }
 }

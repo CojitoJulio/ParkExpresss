@@ -1,0 +1,75 @@
+<section>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-8">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <form [formGroup]="miFormulario" class="card-body p-5 text-center">
+            <ng-template ngFor let-car [ngForOf]="carsactual" let-i="index">
+              <article class="vehicle mb-4">
+                <div class="caricon">
+                  <img src="../../../assets/car.svg" />
+                </div>
+                <div class="carinfo">
+                  <p class="model">{{ car.marca }}</p>
+                  <p class="model">{{ car.modelo }}</p>
+                  <p class="patente">
+                    {{ formatPatente(car.patente).toUpperCase() }}
+                  </p>
+                </div>
+                <div class="deleteicon">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="{{ car.id }}"
+                    id="radiocar"
+                    [(ngModel)]="carSelectedId"
+                    [value]="car.id"
+                    (change)="selectCar(car.id)"
+                    required
+                    formControlName="carSelect"
+                  />
+                </div>
+              </article>
+            </ng-template>
+
+            <hr />
+
+            <div>
+              <label class="form-label">Direccion</label>
+              <div class="infopark">{{ parkingselect.direccion }}</div>
+            </div>
+            <div>
+              <label class="form-label">Dueño</label>
+              <div class="infopark">{{ useractual.nombre }}</div>
+            </div>
+            <div>
+              <label class="form-label doble" style="height: 25px">
+                <p>Precio</p>
+                <p>Lugar</p></label
+              >
+              <div class="infopark doble">
+                <p>$ {{ parkingselect.precio }}</p>
+                <p style="border-left: 1px solid #c0c0c0">
+                  {{ parkingselect.nroparking }}
+                </p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Descripcion</label>
+              <div class="infopark">{{ parkingselect.descripcion }}</div>
+            </div>
+
+            <button
+              class="btn btn-outline-light btn-lg px-5 mb-1"
+              type="submit"
+              [disabled]="!isFormValid()"
+              (click)="confirm()"
+            >
+              Confirmar Arriendo
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

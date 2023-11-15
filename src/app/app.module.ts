@@ -17,6 +17,8 @@ import { AdminparkingComponent } from './components/adminparking/adminparking.co
 import { AddcarComponent } from './components/addcar/addcar.component';
 import { AddparkingComponent } from './components/addparking/addparking.component';
 import { MainComponent } from './components/main/main.component';
+import { RentselectionComponent } from './components/rentselection/rentselection.component';
+import { RentprocessComponent } from './components/rentprocess/rentprocess.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MainComponent } from './components/main/main.component';
     AddcarComponent,
     AddparkingComponent,
     MainComponent,
+    RentselectionComponent,
+    RentprocessComponent,
   ],
   imports: [
     BrowserModule,
