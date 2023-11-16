@@ -166,7 +166,6 @@ export class RegisterComponent implements OnInit {
   getusers() {
     this.apiService.getUsers().subscribe((usuarios) => {
       this.users = usuarios;
-      console.log(this.users);
     });
   }
 
@@ -188,21 +187,13 @@ export class RegisterComponent implements OnInit {
         this.users.push(data as Usuario);
       });
     }
-
-    this.apiService.getUsers().subscribe((usuarios) => {
-      this.users = usuarios;
-
-      this.users.forEach((user) => {
-        if (email === user.email) {
-          localStorage.setItem(
-            'actualuser',
-            JSON.stringify({ email: email, nombre: name, id: user.id })
-          );
-        }
-      });
-    });
-
     this.authservice.login();
+
+    localStorage.setItem(
+      'actualuser',
+      JSON.stringify({ email: email, nombre: name })
+    );
+
     this.router.navigate(['/creditcard']);
   }
 }

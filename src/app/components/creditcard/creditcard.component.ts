@@ -132,6 +132,7 @@ export class CreditcardComponent implements OnInit {
   getusers() {
     this.apiService.getUsers().subscribe((usuarios) => {
       this.users = usuarios;
+      this.cargarlocal();
       // console.log(this.users);
       var actualuser = localStorage.getItem('actualuser');
       if (actualuser) {
@@ -139,6 +140,26 @@ export class CreditcardComponent implements OnInit {
         this.actualid = actualidid;
       }
     });
+  }
+
+  cargarlocal() {
+    var actualuser = localStorage.getItem('actualuser');
+    if (actualuser) {
+      var actualemail = JSON.parse(actualuser).email;
+
+      this.users.forEach((user) => {
+        if (user.email == actualemail) {
+          localStorage.setItem(
+            'actualuser',
+            JSON.stringify({
+              email: user.email,
+              nombre: user.nombre,
+              id: user.id,
+            })
+          );
+        }
+      });
+    }
   }
 
   register() {
@@ -165,7 +186,6 @@ export class CreditcardComponent implements OnInit {
     }
 
     this.authservice.login();
-
     this.router.navigate(['/dashboard']);
   }
 }

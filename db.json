@@ -136,60 +136,11 @@
       "id": 11
     },
     {
-      "email": "ksajdfkl@asdasd.com",
-      "nombre": "jsdajklfhksdj",
-      "telefono": "345345454",
-      "password": "asdfasdf",
+      "email": "pelao@brazzers.com",
+      "nombre": "pelao brazzers",
+      "telefono": "938726463",
+      "password": "brazzers",
       "id": 12
-    },
-    {
-      "email": "checo@sp.com",
-      "nombre": "Sergio Perez",
-      "telefono": "937823399",
-      "password": "crishibb",
-      "id": 13
-    },
-    {
-      "email": "checo@sp.com",
-      "nombre": "Sergio Perez",
-      "telefono": "937823399",
-      "password": "crishibb",
-      "id": 14
-    },
-    {
-      "email": "max@nro1.com",
-      "nombre": "Max Verstappen",
-      "telefono": "928736482",
-      "password": "maxlion",
-      "id": 15
-    },
-    {
-      "email": "lando@mclaren.com",
-      "nombre": "Lando Norris",
-      "telefono": "923846736",
-      "password": "landowinpls",
-      "id": 16
-    },
-    {
-      "email": "botas@valteri.com",
-      "nombre": "Valteri Bottas",
-      "telefono": "982374827",
-      "password": "alfaromeo",
-      "id": 17
-    },
-    {
-      "email": "marilyn@manson.com",
-      "nombre": "Brayan Warner",
-      "telefono": "928376427",
-      "password": "THEBEAUTIFULPEOPLE",
-      "id": 18
-    },
-    {
-      "email": "pedrito@pascalis.com",
-      "nombre": "Pedro Pascal",
-      "telefono": "923876427",
-      "password": "mandalorian",
-      "id": 19
     }
   ],
   "estacionamientos": [
@@ -284,23 +235,43 @@
       "cvv": "374",
       "idduenio": 19,
       "id": 3
-    }
-  ],
-  "actualrent": [
+    },
     {
-      "id": 1,
-      "idduenio": 11,
-      "idcliente": 19,
-      "idparking": 4,
-      "idauto": 7,
-      "horainicial": "11:33:18",
-      "horatermino": "11:33:20",
-      "total": 0,
-      "fecha": "16-11-2023",
-      "tiempo": 0,
-      "deuda": true
+      "nrotarjeta": "2387461823467123",
+      "titular": "Compelto",
+      "mes": "10",
+      "anio": "2030",
+      "cvv": "999",
+      "idduenio": 21,
+      "id": 10
+    },
+    {
+      "nrotarjeta": "1278364123641236",
+      "titular": "Jose Lopez",
+      "mes": "08",
+      "anio": "2030",
+      "cvv": "373",
+      "id": 11
+    },
+    {
+      "nrotarjeta": "1273846817236471",
+      "titular": "Joselito",
+      "mes": "09",
+      "anio": "2022",
+      "cvv": "222",
+      "id": 12
+    },
+    {
+      "nrotarjeta": "2983472837482734",
+      "titular": "Pelao Brazzers",
+      "mes": "09",
+      "anio": "2029",
+      "cvv": "222",
+      "idduenio": 36,
+      "id": 13
     }
   ],
+  "actualrent": [],
   "boletas": [
     {
       "duenio": "Tyler the Creator",
@@ -399,6 +370,34 @@
       "total": 0,
       "deuda": false,
       "id": 23
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Pedro Pascal",
+      "auto": "Peugeot 308 GT",
+      "tarjeta": "1287364127364912",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "11:33:18",
+      "horatermino": "11:33:20",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 24
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Pedro Pascal",
+      "auto": "Mercedes Benz E350",
+      "tarjeta": "1287364127364912",
+      "parking": "Calvo Mackenna #888",
+      "horainicial": "11:52:43",
+      "horatermino": "11:52:45",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 25
     }
   ]
 }

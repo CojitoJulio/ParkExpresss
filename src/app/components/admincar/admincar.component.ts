@@ -53,7 +53,7 @@ export class AdmincarComponent implements OnInit {
   }
 
   deletecar(idcar?: number) {
-    if (this.rentas) {
+    if (this.rentas.length != 0) {
       this.rentas.forEach((renta) => {
         console.log('hola?');
         if (renta.idauto == idcar) {
@@ -63,6 +63,8 @@ export class AdmincarComponent implements OnInit {
           console.log('no papito, tamos al dia');
         }
       });
+    } else {
+      console.log('nadie tiene deudas');
     }
   }
 
