@@ -4,9 +4,21 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-8">
         <div class="card bg-dark text-white" style="border-radius: 1rem">
           <form class="card-body p-5 text-center">
-            <h1 class="mb-2">{{ parkingselect.direccion }}</h1>
-            <img src="../../../assets/parking-icon.png" id="parkingimg" />
-            <h3></h3>
+            <h1 class="mb-2">{{ actualparking.direccion }}</h1>
+            <h5>Arriendo en curso</h5>
+            <img
+              src="../../../assets/parking-icon.png"
+              id="parkingimg"
+              class="mb-3"
+            />
+            <h3>Hora de Inicio</h3>
+            <h3>{{ firsthour }}</h3>
+            <button
+              class="btn btn-outline-danger btn-lg px-5 mt-3"
+              (click)="finalizar()"
+            >
+              Finalizar Arriendo
+            </button>
           </form>
         </div>
       </div>

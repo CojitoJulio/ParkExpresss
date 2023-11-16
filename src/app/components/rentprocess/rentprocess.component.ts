@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Actualrent } from 'src/app/models/actualrent';
 import { Parking } from 'src/app/models/parking';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -8,14 +10,22 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./rentprocess.component.css'],
 })
 export class RentprocessComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   actualparkselectedid!: number;
+  firsthour!: number;
   parkings: Parking[] = [];
-  parkingselect!: Parking;
+  tiempototal!: number;
+  horatermino!: string;
+  total!: number;
+  rents: Actualrent[] = [];
+  actualrent!: Actualrent;
+  actualparkid!: number;
+  actualparking!: Parking;
 
   ngOnInit() {
-    this.getpark();
+    this.getactualpark();
+    this.getActualRent();
   }
 
   private getpark() {
@@ -23,8 +33,19 @@ export class RentprocessComponent implements OnInit {
     if (actualparkselected) {
       var actualparkselectedidid = JSON.parse(actualparkselected).id;
       this.actualparkselectedid = actualparkselectedidid;
+      var actualhour = JSON.parse(actualparkselected).hora;
+      this.firsthour = actualhour;
+      console.log(this.firsthour);
     }
     this.getparkmero();
+  }
+
+  getactualpark() {
+    var actualpark = localStorage.getItem('idparkselected');
+    if (actualpark) {
+      var actualparkidd = JSON.parse(actualpark).id;
+      this.actualparkid = actualparkidd;
+    }
   }
 
   getparkmero() {
@@ -33,9 +54,62 @@ export class RentprocessComponent implements OnInit {
 
       this.parkings.forEach((park) => {
         if (park.id == this.actualparkselectedid) {
-          this.parkingselect = park;
+          this.actualparking = park;
         }
       });
+    });
+  }
+
+  finalizar() {
+    this.updaterent();
+    this.router.navigate(['/rentpay']);
+  }
+
+  calcs() {
+    var tiempo = this.actualrent.tiempo;
+    var fecha = new Date();
+    var tiemponow = fecha.getTime();
+    var horanow =
+      fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
+    this.tiempototal = parseFloat(((tiemponow - tiempo) / 3600000).toFixed(1));
+    this.horatermino = horanow;
+
+    var total = this.actualparking.precio * this.tiempototal;
+    this.total = total;
+  }
+
+  getActualRent() {
+    this.getpark();
+    this.apiService.getActualRent().subscribe((rents: Actualrent[]) => {
+      this.rents = rents;
+
+      this.rents.forEach((rent) => {
+        if (rent.idparking == this.actualparkid) {
+          this.actualrent = rent;
+          this.calcs();
+        }
+      });
+    });
+  }
+
+  updaterent() {
+    console.log(this.actualrent);
+    const renttoUpdate: Actualrent = {
+      id: this.actualrent.id,
+      idduenio: this.actualrent.idduenio,
+      idcliente: this.actualrent.idcliente,
+      idparking: this.actualrent.idparking,
+      idauto: this.actualrent.idauto,
+      horainicial: this.actualrent.horainicial,
+      horatermino: this.horatermino,
+      total: this.total,
+      fecha: this.actualrent.fecha,
+      tiempo: this.tiempototal,
+      deuda: this.actualrent.deuda,
+    };
+
+    this.apiService.updateRent(renttoUpdate).subscribe(() => {
+      console.log('se actualizó');
     });
   }
 }

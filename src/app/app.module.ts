@@ -19,6 +19,7 @@ import { AddparkingComponent } from './components/addparking/addparking.componen
 import { MainComponent } from './components/main/main.component';
 import { RentselectionComponent } from './components/rentselection/rentselection.component';
 import { RentprocessComponent } from './components/rentprocess/rentprocess.component';
+import { RentpayComponent } from './components/rentpay/rentpay.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RentprocessComponent } from './components/rentprocess/rentprocess.compo
     MainComponent,
     RentselectionComponent,
     RentprocessComponent,
+    RentpayComponent,
   ],
   imports: [
     BrowserModule,

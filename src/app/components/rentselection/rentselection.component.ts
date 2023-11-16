@@ -21,7 +21,6 @@ export class RentselectionComponent implements OnInit {
     private fb: FormBuilder
   ) {}
 
-  cars: Autos[] = [];
   carsactual: Autos[] = [];
   parkings: Parking[] = [];
   Usuarios: Usuario[] = [];
@@ -146,7 +145,9 @@ export class RentselectionComponent implements OnInit {
       idparking: this.actualparkselectedid,
       idauto: carid,
       horainicial: hora,
+      horatermino: 'null',
       fecha: fecha,
+      total: 0,
       tiempo: tiempo,
       deuda: true,
     };

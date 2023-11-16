@@ -5,6 +5,8 @@ export class Actualrent {
   'idparking': number;
   'idauto': number;
   'horainicial': string;
+  'horatermino': string;
+  'total': number;
   'fecha': string;
   'tiempo': number;
   'deuda': boolean;

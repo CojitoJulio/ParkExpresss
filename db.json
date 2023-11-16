@@ -212,36 +212,13 @@
       "id": 2
     }
   ],
-  "actualrent": [
-    {
-      "id": 0,
-      "idduenio": 11,
-      "idcliente": 7,
-      "idparking": 5,
-      "idauto": 3,
-      "horainicial": "18:31:57",
-      "fecha": "18-11-2023",
-      "tiempo": 123419,
-      "deuda": true
-    },
-    {
-      "idduenio": 11,
-      "idcliente": 11,
-      "idparking": 5,
-      "idauto": 0,
-      "horainicial": "23:15:46",
-      "fecha": "14-11-2023",
-      "tiempo": 1700014546979,
-      "deuda": true,
-      "id": 1
-    }
-  ],
+  "actualrent": [],
   "boletas": [
     {
       "id": 0,
-      "idduenio": 11,
-      "idcliente": 7,
-      "idparking": 5,
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Miles Morales",
+      "parking": "Avenida Jose Miguel Claro #998",
       "horainicial": "18:31:57",
       "horatermino": "19:01:22",
       "fecha": "18-11-2023",
@@ -261,6 +238,71 @@
       "total": 1200,
       "deuda": false,
       "idauto": 3
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Tyler the Creator",
+      "tarjeta": "1236782678234891",
+      "parking": "Calvo Mackenna #888",
+      "horainicial": "15:38:14",
+      "horatermino": "22:33:26",
+      "fecha": "15-11-2023",
+      "tiempototal": 6.9,
+      "total": 8280,
+      "deuda": false,
+      "id": 2
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Tyler the Creator",
+      "tarjeta": "1236782678234891",
+      "parking": "Calvo Mackenna #888",
+      "horainicial": "15:38:14",
+      "horatermino": "22:50:17",
+      "fecha": "15-11-2023",
+      "tiempototal": 7.2,
+      "total": 8640,
+      "deuda": false,
+      "id": 3
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "22:51:57",
+      "horatermino": "22:52:1",
+      "fecha": "15-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 4
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "22:52:49",
+      "horatermino": "22:53:52",
+      "fecha": "15-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 5
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "23:44:45",
+      "horatermino": "23:50:58",
+      "fecha": "15-11-2023",
+      "tiempototal": 0.1,
+      "total": 150,
+      "deuda": false,
+      "id": 6
     }
   ]
 }

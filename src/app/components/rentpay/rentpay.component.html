@@ -1,0 +1,66 @@
+<section>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-7">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <form [formGroup]="miFormulario" class="card-body p-5 text-center">
+            <h1>Pago</h1>
+            <h5 class="mb-3">Seleccione su metodo de pago</h5>
+            <ng-template ngFor let-card [ngForOf]="cards">
+              <div
+                class="tarjeta d-flex flex-row justify-content-center align-items-center"
+              >
+                <div class="creditsample mb-4">
+                  <div class="image">
+                    <img src="../../../assets/chip.png" alt="" />
+                    <img src="../../../assets/visa.png" alt="" />
+                  </div>
+                  <div class="card-number-box">{{ card.nrotarjeta }}</div>
+                  <div class="data">
+                    <div class="box">
+                      <span>Titular de la tarjeta</span>
+                      <div class="card-name">{{ card.titular }}</div>
+                    </div>
+                    <div class="box">
+                      <span>Expiracion</span>
+                      <div class="expiration">
+                        <span class="exp-month">{{ card.mes }}</span>
+                        <span class="exp-year"> / {{ card.anio }}</span>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <span>CVV</span>
+                      <div class="cvv">***</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="deleteicon">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="{{ card.id }}"
+                    id="radiocard"
+                    [(ngModel)]="cardSelectedId"
+                    [value]="card.id"
+                    (change)="selectCard(card.id)"
+                    required
+                    formControlName="cardSelect"
+                  />
+                </div>
+              </div>
+            </ng-template>
+            <h2>Total</h2>
+            <h3>$ {{ total }}</h3>
+            <button
+              class="btn btn-outline-success btn-lg px-5 mt-3"
+              [disabled]="!isFormValid()"
+              (click)="generateBoleta()"
+            >
+              Pagar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

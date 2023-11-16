@@ -1,7 +1,7 @@
 .creditsample {
   border-radius: 10px;
-  width: 100%;
-  height: 230px;
+  width: 75%;
+  height: 300;
   margin-bottom: 20px;
   background: linear-gradient(45deg, #0f9690, #0c7075);
   padding: 15px;
@@ -45,6 +45,13 @@
 
 .value {
   width: 131px;
+}
+
+.deleteicon input {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
