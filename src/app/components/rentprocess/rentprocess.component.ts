@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Actualrent } from 'src/app/models/actualrent';
 import { Parking } from 'src/app/models/parking';
 import { ApiService } from 'src/app/services/api.service';
+import { payGuard } from 'src/app/guards/pay.guard';
 
 @Component({
   selector: 'app-rentprocess',
@@ -10,7 +11,11 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./rentprocess.component.css'],
 })
 export class RentprocessComponent implements OnInit {
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private payGuard: payGuard
+  ) {}
 
   actualparkselectedid!: number;
   firsthour!: number;
@@ -62,6 +67,7 @@ export class RentprocessComponent implements OnInit {
 
   finalizar() {
     this.updaterent();
+    this.payGuard.PagoNoRealizado();
     this.router.navigate(['/rentpay']);
   }
 

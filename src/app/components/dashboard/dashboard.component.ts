@@ -22,6 +22,15 @@ export class DashboardComponent implements OnInit {
   cars: Autos[] = [];
   carsactual: Autos[] = [];
 
+  //Resumen Cliente
+  HorasSemanales!: number;
+  TotalTotales!: number;
+  RecuentoUsado!: number;
+
+  //Resumen Dueño
+  VecesArrendado!: number;
+  TotalArriendos!: number;
+
   ngOnInit() {
     this.getuser();
     this.getCars();
@@ -83,4 +92,8 @@ export class DashboardComponent implements OnInit {
       this.actualid = actualidid;
     }
   }
+
+  getResumenClient() {}
+
+  getResumenOwner() {}
 }

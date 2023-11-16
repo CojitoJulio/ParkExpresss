@@ -3,8 +3,8 @@ import * as L from 'leaflet';
 import { ApiService } from 'src/app/services/api.service';
 import 'leaflet-control-geocoder';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
-import { NavigationExtras, Router } from '@angular/router';
-import { Parking } from 'src/app/models/parking';
+import { Router } from '@angular/router';
+import { Actualrent } from 'src/app/models/actualrent';
 
 @Component({
   selector: 'app-home',
@@ -81,17 +81,18 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  prueba(actualpark: Parking) {
-    console.log(actualpark);
-  }
-
   rent(actualpark: number) {
-    localStorage.setItem(
-      'idparkselected',
-      JSON.stringify({
-        id: actualpark,
-      })
-    );
-    this.router.navigate(['/rentselection']);
+    var rent = localStorage.getItem('idparkselected');
+    if (rent) {
+      this.router.navigate(['/rentpay']);
+    } else {
+      localStorage.setItem(
+        'idparkselected',
+        JSON.stringify({
+          id: actualpark,
+        })
+      );
+      this.router.navigate(['/rentselection']);
+    }
   }
 }

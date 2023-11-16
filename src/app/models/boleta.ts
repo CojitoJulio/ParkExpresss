@@ -4,6 +4,7 @@ export class Boleta {
   'cliente': string;
   'tarjeta': number;
   'parking': string;
+  'auto': string;
   'horainicial': string;
   'horatermino': string;
   'fecha': string;

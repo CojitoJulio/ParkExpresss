@@ -137,13 +137,11 @@ export class RentselectionComponent implements OnInit {
   }
 
   insertRent(hora: string, fecha: string, tiempo: number) {
-    var carid: number = this.autoSeleccionado.id ?? 0;
-
     const rent: Actualrent = {
       idduenio: this.parkingselect.iddueno,
       idcliente: this.actualid,
       idparking: this.actualparkselectedid,
-      idauto: carid,
+      idauto: this.carSelectedId,
       horainicial: hora,
       horatermino: 'null',
       fecha: fecha,

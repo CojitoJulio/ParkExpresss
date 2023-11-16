@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { payGuard } from 'src/app/guards/pay.guard';
 import { Actualrent } from 'src/app/models/actualrent';
+import { Autos } from 'src/app/models/autos';
 import { Boleta } from 'src/app/models/boleta';
 import { Parking } from 'src/app/models/parking';
 import { Tarjeta } from 'src/app/models/tarjeta';
@@ -19,7 +21,8 @@ export class RentpayComponent implements OnInit {
   constructor(
     private apiservice: ApiService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private payGuard: payGuard
   ) {}
 
   cards: Tarjeta[] = [];
@@ -41,6 +44,8 @@ export class RentpayComponent implements OnInit {
   total!: number;
   boletas: Boleta[] = [];
   tarjetaactual!: Tarjeta;
+  cars: Autos[] = [];
+  autoselect!: Autos;
 
   ngOnInit() {
     this.getActualRent();
@@ -109,10 +114,13 @@ export class RentpayComponent implements OnInit {
     this.getcard();
     this.getduenio();
 
+    var vehiculo = this.autoselect.marca + ' ' + this.autoselect.modelo;
+
     if (pago) {
       const boletafinal: Boleta = {
         duenio: this.duenio.nombre,
         cliente: this.useractual.nombre,
+        auto: vehiculo,
         tarjeta: this.tarjetaactual.nrotarjeta,
         parking: this.actualparking.direccion,
         horainicial: this.actualrent.horainicial,
@@ -127,9 +135,14 @@ export class RentpayComponent implements OnInit {
         this.boletas.push(data as Boleta);
       });
     }
+
+    localStorage.removeItem('idparkselected');
+
     this.deleteRent(this.actualrent.id);
 
     alert('Se completó la transacción');
+
+    this.payGuard.PagoRealizado();
 
     this.router.navigate(['/home']);
   }
@@ -200,6 +213,21 @@ export class RentpayComponent implements OnInit {
         if (rent.idparking == this.actualparkid) {
           this.actualrent = rent;
           this.calcs();
+          this.getCar();
+        }
+      });
+    });
+  }
+
+  getCar() {
+    this.apiservice.getCars().subscribe((cars: Autos[]) => {
+      this.cars = cars;
+      this.cars.forEach((car) => {
+        console.log(this.actualrent.idauto);
+        console.log(car);
+        if (this.actualrent.idauto == car.id) {
+          this.autoselect = car;
+          console.log(this.autoselect);
         }
       });
     });
