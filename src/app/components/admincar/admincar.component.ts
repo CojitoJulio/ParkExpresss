@@ -45,6 +45,10 @@ export class AdmincarComponent implements OnInit {
       });
   }
 
+  prueba(idcar: any) {
+    console.log(idcar);
+  }
+
   getrent() {
     this.apiService.getActualRent().subscribe((rents: Actualrent[]) => {
       this.rentas = rents;
@@ -53,18 +57,30 @@ export class AdmincarComponent implements OnInit {
   }
 
   deletecar(idcar?: number) {
-    if (this.rentas.length != 0) {
-      this.rentas.forEach((renta) => {
-        console.log('hola?');
-        if (renta.idauto == idcar) {
-          console.log('esta con deuda este qlo');
+    if (this.rentas.length !== 0) {
+      for (const renta of this.rentas) {
+        if (renta.idauto === idcar) {
+          const inpago = document.getElementById('inpaga');
+          if (inpago) {
+            inpago.style.display = 'block';
+          }
           return;
-        } else {
-          console.log('no papito, tamos al dia');
         }
+      }
+      const inpago = document.getElementById('inpaga');
+      if (inpago) {
+        inpago.style.display = 'none';
+      }
+      console.log('esta limpio');
+      this.apiService.deleteCar(idcar).subscribe((response) => {
+        console.log('Se borró el vehículo con id:', idcar);
+        this.getCars();
       });
     } else {
-      console.log('nadie tiene deudas');
+      this.apiService.deleteCar(idcar).subscribe((response) => {
+        console.log('Se borró el vehículo con id:', idcar);
+        this.getCars();
+      });
     }
   }
 

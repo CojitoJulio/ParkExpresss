@@ -9,36 +9,12 @@
       "idduenio": 1
     },
     {
-      "marca": "Samsung",
-      "modelo": "SM3",
-      "patente": "cxtf95",
-      "anio": "2012",
-      "idduenio": 11,
-      "id": 2
-    },
-    {
-      "marca": "Cupra",
-      "modelo": "Formentor VZ",
-      "patente": "SG9282",
-      "anio": "2023",
-      "idduenio": 11,
-      "id": 3
-    },
-    {
       "marca": "Mercedes Benz",
       "modelo": "S550",
       "patente": "SJ1344",
       "anio": "2009",
       "idduenio": 7,
       "id": 4
-    },
-    {
-      "marca": "Mazda",
-      "modelo": "MX-5",
-      "patente": "rptt95",
-      "anio": "2022",
-      "idduenio": 11,
-      "id": 5
     },
     {
       "marca": "Mercedes Benz",
@@ -55,6 +31,14 @@
       "anio": "2023",
       "idduenio": 19,
       "id": 7
+    },
+    {
+      "marca": "Peugeot",
+      "modelo": "206",
+      "patente": "AO2839",
+      "anio": "2005",
+      "idduenio": 11,
+      "id": 8
     }
   ],
   "usuarios": [
@@ -175,7 +159,7 @@
         "lat": -70.61899065971376
       },
       "iddueno": 11,
-      "estado": true,
+      "estado": false,
       "descripcion": "Es primer estacionamiento de los verdes y esta en el piso -2",
       "precio": "2000",
       "nroparking": "25",
@@ -188,7 +172,7 @@
         "lat": -70.61235212539529
       },
       "iddueno": 11,
-      "estado": true,
+      "estado": false,
       "descripcion": "es el lindo",
       "precio": "800",
       "nroparking": "T3",
@@ -201,7 +185,7 @@
         "lat": -70.61411466115294
       },
       "iddueno": 11,
-      "estado": true,
+      "estado": false,
       "descripcion": "Es el estacionamiento 3",
       "precio": "1200",
       "nroparking": "3",
@@ -398,6 +382,62 @@
       "total": 0,
       "deuda": false,
       "id": 25
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Tyler the Creator",
+      "auto": "BMW 530i",
+      "tarjeta": "1236782678234891",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "17:35:28",
+      "horatermino": "17:35:29",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 26
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "18:16:49",
+      "horatermino": "18:16:53",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 27
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "18:29:43",
+      "horatermino": "18:29:44",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 28
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "18:46:23",
+      "horatermino": "18:46:24",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 29
     }
   ]
 }

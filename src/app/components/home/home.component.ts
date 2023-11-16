@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import 'leaflet-control-geocoder';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 import { Router } from '@angular/router';
-import { Actualrent } from 'src/app/models/actualrent';
+import { Parking } from 'src/app/models/parking';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +13,9 @@ import { Actualrent } from 'src/app/models/actualrent';
 })
 export class HomeComponent implements OnInit {
   data: any = {};
+  actualid!: number;
+  parkings: Parking[] = [];
+  parkingselect!: Parking;
 
   constructor(private apiService: ApiService, private router: Router) {}
 
@@ -81,7 +84,39 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  getuser() {
+    var actualuser = localStorage.getItem('actualuser');
+    if (actualuser) {
+      var actualidid = JSON.parse(actualuser).id;
+      this.actualid = actualidid;
+    }
+  }
+
+  getparking(parkid: number) {
+    this.apiService.getParking().subscribe((parkings: Parking[]) => {
+      this.parkings = parkings;
+      this.parkings.forEach((park) => {
+        if (park.id == parkid) {
+          this.parkingselect = park;
+        }
+      });
+    });
+  }
+
   rent(actualpark: number) {
+    console.log('hola?');
+    this.getuser();
+
+    this.getparking(actualpark);
+
+    if (this.actualid == this.parkingselect.iddueno) {
+      const inpago = document.getElementById('inpaga');
+      if (inpago) {
+        inpago.style.display = 'block';
+      }
+      return;
+    }
+
     var rent = localStorage.getItem('idparkselected');
     if (rent) {
       this.router.navigate(['/rentpay']);

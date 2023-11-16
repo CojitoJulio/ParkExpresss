@@ -13,6 +13,10 @@
                 Adminsitra tus Vehiculos Registrados
               </p>
 
+              <p id="inpaga">
+                No se puede eliminar el vehículo, posee una deuda inpaga
+              </p>
+
               <ng-template ngFor let-car [ngForOf]="carsactual" let-i="index">
                 <article class="vehicle mb-4">
                   <div class="caricon">
@@ -25,7 +29,12 @@
                       {{ formatPatente(car.patente).toUpperCase() }}
                     </p>
                   </div>
-                  <div class="deleteicon" (click)="deletecar(car.id)">
+                  <div
+                    class="deleteicon"
+                    data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#modal' + car.id"
+                    (click)="prueba(car.id)"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="50"
@@ -40,6 +49,51 @@
                     </svg>
                   </div>
                 </article>
+                <div class="modaldelete">
+                  <div
+                    class="modal fade"
+                    [id]="'modal' + car.id"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Eliminar Vehículo
+                          </h1>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          Estas Seguro que deseas eliminar este vehiculo?
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            (click)="deletecar(car.id)"
+                            data-bs-dismiss="modal"
+                          >
+                            Eliminar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </ng-template>
 
               <article [routerLink]="['/addcar']" class="addparking mb-4">

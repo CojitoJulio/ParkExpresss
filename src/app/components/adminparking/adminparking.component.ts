@@ -18,10 +18,12 @@ export class AdminparkingComponent implements OnInit {
   estado: boolean = true;
   users: Usuario[] = [];
   actualid!: number;
+  rentas: Actualrent[] = [];
 
   ngOnInit() {
     this.getuser();
     this.getparkings();
+    this.getrent();
   }
 
   getparkings() {
@@ -57,6 +59,41 @@ export class AdminparkingComponent implements OnInit {
     if (actualuser) {
       var actualidid = JSON.parse(actualuser).id;
       this.actualid = actualidid;
+    }
+  }
+
+  getrent() {
+    this.apiService.getActualRent().subscribe((rents: Actualrent[]) => {
+      this.rentas = rents;
+      console.log(this.rentas);
+    });
+  }
+
+  deletepark(idpark?: number) {
+    if (this.rentas.length !== 0) {
+      for (const renta of this.rentas) {
+        if (renta.idparking === idpark) {
+          const inpago = document.getElementById('inpaga');
+          if (inpago) {
+            inpago.style.display = 'block';
+          }
+          return;
+        }
+      }
+      const inpago = document.getElementById('inpaga');
+      if (inpago) {
+        inpago.style.display = 'none';
+      }
+      console.log('esta limpio');
+      this.apiService.deleteParking(idpark).subscribe((response) => {
+        console.log('Se borró el vehículo con id:', idpark);
+        this.getparkings();
+      });
+    } else {
+      this.apiService.deleteParking(idpark).subscribe((response) => {
+        console.log('Se borró el vehículo con id:', idpark);
+        this.getparkings();
+      });
     }
   }
 

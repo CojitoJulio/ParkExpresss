@@ -38,6 +38,11 @@ export class ApiService {
     );
   }
 
+  public deleteParking(actualparkid: any): Observable<any> {
+    const deleteUrl = `${this.urlParking}/${actualparkid}`;
+    return this.http.delete(deleteUrl);
+  }
+
   // Usuarios
 
   public getUsers(): Observable<any> {
@@ -58,7 +63,7 @@ export class ApiService {
     return this.http.post<Autos>(this.urlCars, car);
   }
 
-  public deleteCar(actualcarid: number): Observable<any> {
+  public deleteCar(actualcarid: any): Observable<any> {
     const deleteUrl = `${this.urlCars}/${actualcarid}`;
     return this.http.delete(deleteUrl);
   }

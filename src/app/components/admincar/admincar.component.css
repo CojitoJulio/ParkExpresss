@@ -1,157 +1,162 @@
-main{
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    height: 90%;
-} 
-
-.center{
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-
+main {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 90%;
 }
 
-.patente{
-    border: 1px solid #acacac;
-    border-radius: 10px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 27px;
-    font-weight: bold;
+.center {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 
-.car{
-    height: 140px;
+.patente {
+  border: 1px solid #acacac;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: bold;
 }
 
-.vehicle{
-    width: auto;
-    height: 140px;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 30% 60% 10%;
-    border: 1px solid #acacac;
-    transition: 0.2s;
-    color: black;
+.car {
+  height: 140px;
 }
 
-.vehicle:hover{
-    box-shadow: 5px 6px 11px -4px rgba(0,0,0,0.75);
-    transition: 0.2s;
+.vehicle {
+  width: auto;
+  height: 140px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  border: 1px solid #acacac;
+  transition: 0.2s;
+  color: black;
 }
 
-.caricon{
-    align-items: center;
-    margin-left: 5px;
+.vehicle:hover {
+  box-shadow: 5px 6px 11px -4px rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
 }
 
-.caricon img{
-    width: 100px;
+.caricon {
+  align-items: center;
+  margin-left: 5px;
 }
 
-.deleteicon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.caricon img {
+  width: 100px;
 }
 
-.deleteicon svg{
-    margin-bottom: 7px;
-    margin-left: 5px;
-    cursor: pointer;
+.deleteicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carinfo{
-    border-left: 1px solid #acacac;
-    border-right: 1px solid #acacac;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0 10px;
+.deleteicon svg {
+  margin-bottom: 7px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
-.carinfo p{
-    margin: 0;
+.carinfo {
+  border-left: 1px solid #acacac;
+  border-right: 1px solid #acacac;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 10px;
 }
 
-.model{
-    font-weight: bold;
-    font-size: 20px;
+.carinfo p {
+  margin: 0;
 }
 
-.patente{
-    border: 1px solid #acacac;
-    border-radius: 10px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 27px;
-    font-weight: bold;
+.model {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-
-
-.addparking{
-    width: auto;
-    height: 80px;
-    background-color: #e5e5e5;
-    border-radius: 10px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-    cursor: pointer;
-    color: black;
+.patente {
+  border: 1px solid #acacac;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: bold;
 }
 
-.addparking:hover, #AdminB:hover{
-    background-color: #c0c0c0;
-    transition: 0.2s;
+.addparking {
+  width: auto;
+  height: 80px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+  color: black;
+}
+
+.addparking:hover,
+#AdminB:hover {
+  background-color: #c0c0c0;
+  transition: 0.2s;
+}
+
+/* Modal  */
+
+.modal {
+  color: black;
+}
+
+#inpaga {
+  color: red;
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
-    .vehicle{
-        width: auto;
-        height: 190px;
-        grid-template-columns: 40% 60%;
+  .vehicle {
+    width: auto;
+    height: 190px;
+    grid-template-columns: 40% 60%;
+  }
 
-    }
+  .caricon {
+    border-bottom: 1px solid #acacac;
+  }
 
-    .caricon{
-        border-bottom: 1px solid #acacac;
-    }
-    
-    .carinfo{
-        border-bottom: 1px solid #acacac;
-        border-right: none;
-    }
+  .carinfo {
+    border-bottom: 1px solid #acacac;
+    border-right: none;
+  }
 
-    .deleteicon::after{
-        content: 'Eliminar Vehiculo';
-        font-weight: 500;
-        font-size: large;
-        margin-left: 5px;
-    }
+  .deleteicon::after {
+    content: "Eliminar Vehiculo";
+    font-weight: 500;
+    font-size: large;
+    margin-left: 5px;
+  }
 
-    .deleteicon{
-        padding-top: 8px;
-        justify-content: center;
-        width: 290px;
-        cursor: pointer;
-    }
+  .deleteicon {
+    padding-top: 8px;
+    justify-content: center;
+    width: 290px;
+    cursor: pointer;
+  }
 
-    .deleteicon svg{
-        width: 30px;
-        height: 30px;
-    }
-
-
-
+  .deleteicon svg {
+    width: 30px;
+    height: 30px;
+  }
 }
