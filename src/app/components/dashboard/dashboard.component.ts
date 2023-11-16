@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { ApiService } from 'src/app/services/api.service';
 import { switchMap } from 'rxjs/operators';
 import { Autos } from 'src/app/models/autos';
+import { Boleta } from 'src/app/models/boleta';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,24 +18,41 @@ export class DashboardComponent implements OnInit {
   parkingstotal: Parking[] = [];
   estado: boolean = true;
   users: Usuario[] = [];
+  usuario!: Usuario;
   actualid!: number;
 
   cars: Autos[] = [];
   carsactual: Autos[] = [];
 
+  boletastotales: Boleta[] = [];
+
   //Resumen Cliente
-  HorasSemanales!: number;
-  TotalTotales!: number;
-  RecuentoUsado!: number;
+  boletasCliente: Boleta[] = [];
+  HorasSemanales: number = 0;
+  TotalTotales: number = 0;
+  RecuentoUsado: number = 0;
 
   //Resumen Dueño
-  VecesArrendado!: number;
-  TotalArriendos!: number;
+  boletasDuenio: Boleta[] = [];
+  VecesArrendado: number = 0;
+  TotalArriendos: number = 0;
 
   ngOnInit() {
+    this.getResumen();
     this.getuser();
-    this.getCars();
     this.getparkings();
+  }
+
+  calcs() {
+    this.boletasCliente.map((boletona) => {
+      this.HorasSemanales += boletona.tiempototal;
+      this.TotalTotales += boletona.total;
+      this.RecuentoUsado += 1;
+    });
+    this.boletasDuenio.map((boletona) => {
+      this.VecesArrendado += 1;
+      this.TotalArriendos += boletona.total;
+    });
   }
 
   getparkings() {
@@ -91,9 +109,36 @@ export class DashboardComponent implements OnInit {
       var actualidid = JSON.parse(actualuser).id;
       this.actualid = actualidid;
     }
+    this.getCars();
   }
 
-  getResumenClient() {}
+  getResumen() {
+    this.getusers();
+    this.apiService.getBoletas().subscribe((boletas: Boleta[]) => {
+      this.boletastotales = boletas;
 
-  getResumenOwner() {}
+      this.boletastotales.forEach((boletita) => {
+        if (boletita.cliente == this.usuario.nombre) {
+          this.boletasCliente.push(boletita);
+        }
+
+        if (boletita.duenio == this.usuario.nombre) {
+          this.boletasDuenio.push(boletita);
+        }
+      });
+
+      this.calcs();
+    });
+  }
+
+  getusers() {
+    this.apiService.getUsers().subscribe((usuarios: Usuario[]) => {
+      this.users = usuarios;
+      this.users.forEach((user) => {
+        if (user.id == this.actualid) {
+          this.usuario = user;
+        }
+      });
+    });
+  }
 }

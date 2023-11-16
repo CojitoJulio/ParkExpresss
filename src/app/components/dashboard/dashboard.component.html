@@ -69,7 +69,7 @@
           </svg>
           <div class="blocksdata">
             <p>Horas Semanales:</p>
-            <p>21 Horas</p>
+            <p>{{ HorasSemanales }} Horas</p>
           </div>
         </div>
         <div class="second borderer">
@@ -90,7 +90,7 @@
           </svg>
           <div class="blocksdata">
             <p>Total:</p>
-            <p>$39.200</p>
+            <p>${{ TotalTotales }}</p>
           </div>
         </div>
       </div>
@@ -111,26 +111,12 @@
           </svg>
           <p id="htitle">Historial Estacionamientos:</p>
           <div class="historialdata">
-            <article class="historial">
-              <p>Olimpo #1390</p>
-              <p>25/9/2023</p>
-            </article>
-            <article class="historial">
-              <p>Olimpo #1390</p>
-              <p>24/9/2023</p>
-            </article>
-            <article class="historial">
-              <p>Nueva San Martin #138</p>
-              <p>13/8/2023</p>
-            </article>
-            <article class="historial">
-              <p>Avenida Macul #666</p>
-              <p>6/7/2023</p>
-            </article>
-            <article class="historial">
-              <p>Longitudinal #2993</p>
-              <p>11/4/2023</p>
-            </article>
+            <ng-template ngFor let-par [ngForOf]="boletasCliente" let-i="index">
+              <article class="historial">
+                <p>{{ par.parking }}</p>
+                <p>{{ par.fecha }}</p>
+              </article>
+            </ng-template>
           </div>
         </div>
         <div class="fourth">
@@ -149,7 +135,7 @@
             </svg>
             <div class="blocksdata">
               <p>Estacionamientos Usados:</p>
-              <p>25</p>
+              <p>{{ RecuentoUsado }}</p>
             </div>
           </div>
           <div class="seventh borderer">
@@ -192,7 +178,7 @@
           </svg>
           <div class="blocksdata">
             <p>Veces Arrendado:</p>
-            <p>23 Veces</p>
+            <p>{{ VecesArrendado }} Veces</p>
           </div>
         </div>
         <div class="second borderer">
@@ -213,7 +199,7 @@
           </svg>
           <div class="blocksdata">
             <p>Total Arriendos:</p>
-            <p>$71.200</p>
+            <p>${{ TotalArriendos }}</p>
           </div>
         </div>
       </div>
@@ -234,34 +220,12 @@
           </svg>
           <p id="htitle">Historial Clientes:</p>
           <div class="historialdata">
-            <article class="historial">
-              <p>Samsung Sm3</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>Mercedes benz S550</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>Suzuki Alto</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>BMW 318i</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>Fiat Uno</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>Mazda 323</p>
-              <p>11/4/2023</p>
-            </article>
-            <article class="historial">
-              <p>Ford F150 Raptor</p>
-              <p>11/4/2023</p>
-            </article>
+            <ng-template ngFor let-par [ngForOf]="boletasDuenio" let-i="index">
+              <article class="historial">
+                <p>{{ par.auto }}</p>
+                <p>{{ par.fecha }}</p>
+              </article>
+            </ng-template>
           </div>
         </div>
         <div class="fourth">

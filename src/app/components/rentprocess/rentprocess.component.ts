@@ -66,12 +66,14 @@ export class RentprocessComponent implements OnInit {
   }
 
   finalizar() {
+    this.calcs();
     this.updaterent();
     this.payGuard.PagoNoRealizado();
     this.router.navigate(['/rentpay']);
   }
 
   calcs() {
+    console.log('por lo menos funciona esta wea?');
     var tiempo = this.actualrent.tiempo;
     var fecha = new Date();
     var tiemponow = fecha.getTime();
@@ -79,6 +81,8 @@ export class RentprocessComponent implements OnInit {
       fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
     this.tiempototal = parseFloat(((tiemponow - tiempo) / 3600000).toFixed(1));
     this.horatermino = horanow;
+    console.log('el tiempo es');
+    console.log(tiemponow, tiempo, this.tiempototal);
 
     var total = this.actualparking.precio * this.tiempototal;
     this.total = total;
@@ -92,7 +96,6 @@ export class RentprocessComponent implements OnInit {
       this.rents.forEach((rent) => {
         if (rent.idparking == this.actualparkid) {
           this.actualrent = rent;
-          this.calcs();
         }
       });
     });

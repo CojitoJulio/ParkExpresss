@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs';
+import { Actualrent } from 'src/app/models/actualrent';
 import { Autos } from 'src/app/models/autos';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -14,10 +15,12 @@ export class AdmincarComponent implements OnInit {
   cars: Autos[] = [];
   carsactual: Autos[] = [];
   actualid!: number;
+  rentas: Actualrent[] = [];
 
   ngOnInit() {
     this.getuser();
     this.getCars();
+    this.getrent();
   }
 
   getuser() {
@@ -40,6 +43,27 @@ export class AdmincarComponent implements OnInit {
       .subscribe((autos: Autos[]) => {
         this.carsactual = autos.filter((car) => car.idduenio === this.actualid);
       });
+  }
+
+  getrent() {
+    this.apiService.getActualRent().subscribe((rents: Actualrent[]) => {
+      this.rentas = rents;
+      console.log(this.rentas);
+    });
+  }
+
+  deletecar(idcar?: number) {
+    if (this.rentas) {
+      this.rentas.forEach((renta) => {
+        console.log('hola?');
+        if (renta.idauto == idcar) {
+          console.log('esta con deuda este qlo');
+          return;
+        } else {
+          console.log('no papito, tamos al dia');
+        }
+      });
+    }
   }
 
   formatPatente(patente: string): string {

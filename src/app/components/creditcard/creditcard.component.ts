@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { Tarjeta } from 'src/app/models/tarjeta';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-creditcard',
@@ -20,7 +21,8 @@ export class CreditcardComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authservice: AuthService
   ) {
     this.createForm();
   }
@@ -161,6 +163,8 @@ export class CreditcardComponent implements OnInit {
         this.isButtonDisabled = true;
       });
     }
+
+    this.authservice.login();
 
     this.router.navigate(['/dashboard']);
   }

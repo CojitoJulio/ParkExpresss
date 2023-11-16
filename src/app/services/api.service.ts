@@ -58,6 +58,11 @@ export class ApiService {
     return this.http.post<Autos>(this.urlCars, car);
   }
 
+  public deleteCar(actualcarid: number): Observable<any> {
+    const deleteUrl = `${this.urlCars}/${actualcarid}`;
+    return this.http.delete(deleteUrl);
+  }
+
   // Tarjetas
 
   public getCards(): Observable<any> {

@@ -116,6 +116,8 @@ export class RentpayComponent implements OnInit {
 
     var vehiculo = this.autoselect.marca + ' ' + this.autoselect.modelo;
 
+    console.log(this.total);
+
     if (pago) {
       const boletafinal: Boleta = {
         duenio: this.duenio.nombre,

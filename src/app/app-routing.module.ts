@@ -29,7 +29,6 @@ const routes: Routes = [
   {
     path: 'creditcard',
     component: CreditcardComponent,
-    canActivate: [authGuard],
   },
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
   {

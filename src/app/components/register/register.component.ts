@@ -3,6 +3,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { ApiService } from 'src/app/services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authservice: AuthService
   ) {
     this.createForm();
   }
@@ -184,7 +186,6 @@ export class RegisterComponent implements OnInit {
 
       this.apiService.insertUser(user).subscribe((data) => {
         this.users.push(data as Usuario);
-        this.isButtonDisabled = true;
       });
     }
 
@@ -201,6 +202,7 @@ export class RegisterComponent implements OnInit {
       });
     });
 
+    this.authservice.login();
     this.router.navigate(['/creditcard']);
   }
 }

@@ -39,6 +39,22 @@
       "anio": "2022",
       "idduenio": 11,
       "id": 5
+    },
+    {
+      "marca": "Mercedes Benz",
+      "modelo": "E350",
+      "patente": "JNSP91",
+      "anio": "2023",
+      "idduenio": 19,
+      "id": 6
+    },
+    {
+      "marca": "Peugeot",
+      "modelo": "308 GT",
+      "patente": "PdKw47",
+      "anio": "2023",
+      "idduenio": 19,
+      "id": 7
     }
   ],
   "usuarios": [
@@ -125,6 +141,55 @@
       "telefono": "345345454",
       "password": "asdfasdf",
       "id": 12
+    },
+    {
+      "email": "checo@sp.com",
+      "nombre": "Sergio Perez",
+      "telefono": "937823399",
+      "password": "crishibb",
+      "id": 13
+    },
+    {
+      "email": "checo@sp.com",
+      "nombre": "Sergio Perez",
+      "telefono": "937823399",
+      "password": "crishibb",
+      "id": 14
+    },
+    {
+      "email": "max@nro1.com",
+      "nombre": "Max Verstappen",
+      "telefono": "928736482",
+      "password": "maxlion",
+      "id": 15
+    },
+    {
+      "email": "lando@mclaren.com",
+      "nombre": "Lando Norris",
+      "telefono": "923846736",
+      "password": "landowinpls",
+      "id": 16
+    },
+    {
+      "email": "botas@valteri.com",
+      "nombre": "Valteri Bottas",
+      "telefono": "982374827",
+      "password": "alfaromeo",
+      "id": 17
+    },
+    {
+      "email": "marilyn@manson.com",
+      "nombre": "Brayan Warner",
+      "telefono": "928376427",
+      "password": "THEBEAUTIFULPEOPLE",
+      "id": 18
+    },
+    {
+      "email": "pedrito@pascalis.com",
+      "nombre": "Pedro Pascal",
+      "telefono": "923876427",
+      "password": "mandalorian",
+      "id": 19
     }
   ],
   "estacionamientos": [
@@ -210,216 +275,33 @@
       "cvv": "223",
       "idduenio": 11,
       "id": 2
+    },
+    {
+      "nrotarjeta": "1287364127364912",
+      "titular": "Pedro Pascal",
+      "mes": "07",
+      "anio": "2029",
+      "cvv": "374",
+      "idduenio": 19,
+      "id": 3
     }
   ],
-  "actualrent": [],
-  "boletas": [
-    {
-      "id": 0,
-      "duenio": "Daniel Gutierrez",
-      "cliente": "Miles Morales",
-      "parking": "Avenida Jose Miguel Claro #998",
-      "horainicial": "18:31:57",
-      "horatermino": "19:01:22",
-      "fecha": "18-11-2023",
-      "tiempototal": 123419,
-      "total": 8500,
-      "deuda": true
-    },
+  "actualrent": [
     {
       "id": 1,
       "idduenio": 11,
-      "idcliente": 5,
+      "idcliente": 19,
       "idparking": 4,
-      "horainicial": "12:40:21",
-      "horatermino": "12:45:54",
-      "fecha": "18-11-2023",
-      "tiempototal": 2783,
-      "total": 1200,
-      "deuda": false,
-      "idauto": 3
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "15:38:14",
-      "horatermino": "22:33:26",
-      "fecha": "15-11-2023",
-      "tiempototal": 6.9,
-      "total": 8280,
-      "deuda": false,
-      "id": 2
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "15:38:14",
-      "horatermino": "22:50:17",
-      "fecha": "15-11-2023",
-      "tiempototal": 7.2,
-      "total": 8640,
-      "deuda": false,
-      "id": 3
-    },
-    {
-      "duenio": "Daniel Gutierrez",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Avenida Manuel Montt #1552",
-      "horainicial": "22:51:57",
-      "horatermino": "22:52:1",
-      "fecha": "15-11-2023",
-      "tiempototal": 0,
+      "idauto": 7,
+      "horainicial": "11:33:18",
+      "horatermino": "11:33:20",
       "total": 0,
-      "deuda": false,
-      "id": 4
-    },
-    {
-      "duenio": "Daniel Gutierrez",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Avenida Manuel Montt #1552",
-      "horainicial": "22:52:49",
-      "horatermino": "22:53:52",
-      "fecha": "15-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 5
-    },
-    {
-      "duenio": "Daniel Gutierrez",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Avenida Manuel Montt #1552",
-      "horainicial": "23:44:45",
-      "horatermino": "23:50:58",
-      "fecha": "15-11-2023",
-      "tiempototal": 0.1,
-      "total": 150,
-      "deuda": false,
-      "id": 6
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:8:10",
-      "horatermino": "0:8:10",
       "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 7
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "0:8:24",
-      "horatermino": "0:9:4",
-      "fecha": "16-11-2023",
-      "tiempototal": 472251,
-      "total": 566701200,
-      "deuda": false,
-      "id": 8
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:14:10",
-      "horatermino": "0:14:10",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 9
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:16:1",
-      "horatermino": "0:16:1",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 10
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:16:28",
-      "horatermino": "0:16:40",
-      "fecha": "16-11-2023",
-      "tiempototal": 472251.3,
-      "total": 377801040,
-      "deuda": false,
-      "id": 11
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:23:3",
-      "horatermino": "0:23:3",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 12
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "0:23:22",
-      "horatermino": "0:23:22",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 13
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Silvina Hurtado 2333",
-      "horainicial": "0:27:55",
-      "horatermino": "0:27:55",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "total": 0,
-      "deuda": false,
-      "id": 14
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "0:28:14",
-      "horatermino": "0:28:14",
-      "fecha": "16-11-2023",
-      "tiempototal": 0,
-      "deuda": false,
-      "id": 15
-    },
+      "tiempo": 0,
+      "deuda": true
+    }
+  ],
+  "boletas": [
     {
       "duenio": "Tyler the Creator",
       "cliente": "Tyler the Creator",
@@ -429,23 +311,10 @@
       "horainicial": "0:44:29",
       "horatermino": "0:44:29",
       "fecha": "16-11-2023",
-      "tiempototal": 0,
+      "tiempototal": 2,
+      "total": 3000,
       "deuda": false,
       "id": 16
-    },
-    {
-      "duenio": "Tyler the Creator",
-      "cliente": "Tyler the Creator",
-      "auto": "Mazda MX-5",
-      "tarjeta": "1236782678234891",
-      "parking": "Calvo Mackenna #888",
-      "horainicial": "0:45:3",
-      "horatermino": "null",
-      "fecha": "16-11-2023",
-      "tiempototal": 1700106303237,
-      "total": 0,
-      "deuda": false,
-      "id": 17
     },
     {
       "duenio": "Tyler the Creator",
@@ -456,10 +325,80 @@
       "horainicial": "0:45:57",
       "horatermino": "0:45:57",
       "fecha": "16-11-2023",
+      "tiempototal": 1.4,
+      "total": 4200,
+      "deuda": false,
+      "id": 18
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Pedro Pascal",
+      "auto": "Mercedes Benz E350",
+      "tarjeta": "1287364127364912",
+      "parking": "Calvo Mackenna #888",
+      "horainicial": "11:51:44",
+      "horatermino": "11:52:9",
+      "fecha": "16-11-2023",
       "tiempototal": 0,
       "total": 0,
       "deuda": false,
-      "id": 18
+      "id": 19
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Pedro Pascal",
+      "auto": "Mercedes Benz E350",
+      "tarjeta": "1287364127364912",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "11:53:51",
+      "horatermino": "12:23:52",
+      "fecha": "16-11-2023",
+      "tiempototal": 0.5,
+      "total": 400,
+      "deuda": false,
+      "id": 20
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Pedro Pascal",
+      "auto": "Mercedes Benz E350",
+      "tarjeta": "1287364127364912",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "11:54:9",
+      "horatermino": "12:54:12",
+      "fecha": "16-11-2023",
+      "tiempototal": 1.2,
+      "total": 1300,
+      "deuda": false,
+      "id": 21
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Tyler the Creator",
+      "auto": "Mazda MX-5",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Jose Miguel Claro #998",
+      "horainicial": "11:56:54",
+      "horatermino": "11:56:57",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 22
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Pedro Pascal",
+      "auto": "Mercedes Benz E350",
+      "tarjeta": "1287364127364912",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "11:26:33",
+      "horatermino": "11:26:34",
+      "fecha": "16-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 23
     }
   ]
 }

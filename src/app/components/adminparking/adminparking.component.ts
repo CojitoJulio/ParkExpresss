@@ -3,6 +3,7 @@ import { Parking } from 'src/app/models/parking';
 import { Usuario } from 'src/app/models/usuario';
 import { ApiService } from 'src/app/services/api.service';
 import { switchMap } from 'rxjs/operators';
+import { Actualrent } from 'src/app/models/actualrent';
 
 @Component({
   selector: 'app-adminparking',
