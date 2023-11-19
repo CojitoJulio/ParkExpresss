@@ -267,6 +267,7 @@ main {
   height: 60px;
   padding: 5px;
   font-size: large;
+  cursor: pointer;
 }
 
 .historial p {

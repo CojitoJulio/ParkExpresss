@@ -18,6 +18,7 @@ import { RentselectionComponent } from './components/rentselection/rentselection
 import { RentprocessComponent } from './components/rentprocess/rentprocess.component';
 import { RentpayComponent } from './components/rentpay/rentpay.component';
 import { payGuard } from './guards/pay.guard';
+import { BoletasComponent } from './components/boletas/boletas.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoggedGuard] },
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: 'rentpay',
     component: RentpayComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'resumen',
+    component: BoletasComponent,
     canActivate: [authGuard],
   },
   { path: '', redirectTo: '/main', pathMatch: 'full' },

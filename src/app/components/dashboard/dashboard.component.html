@@ -112,7 +112,7 @@
           <p id="htitle">Historial Estacionamientos:</p>
           <div class="historialdata">
             <ng-template ngFor let-par [ngForOf]="boletasCliente" let-i="index">
-              <article class="historial">
+              <article class="historial" (click)="generateBoleta(par.id)">
                 <p>{{ par.parking }}</p>
                 <p>{{ par.fecha }}</p>
               </article>
@@ -221,7 +221,7 @@
           <p id="htitle">Historial Clientes:</p>
           <div class="historialdata">
             <ng-template ngFor let-par [ngForOf]="boletasDuenio" let-i="index">
-              <article class="historial">
+              <article class="historial" (click)="generateBoleta(par.id)">
                 <p>{{ par.auto }}</p>
                 <p>{{ par.fecha }}</p>
               </article>

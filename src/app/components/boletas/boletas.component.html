@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-6">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div
+            class="card-body p-5 text-center d-flex flex-column justify-content-center align-items-center"
+          >
+            <h2 class="fw-bold mb-2 text-uppercase">Boleta</h2>
+            <article class="ticket">
+              <header class="ticket__wrapper">
+                <div class="ticket__header d-flex justify-content-center">
+                  Resumen Arriendo 🅿️
+                </div>
+              </header>
+              <div class="ticket__divider">
+                <div class="ticket__notch"></div>
+                <div class="ticket__notch ticket__notch--right"></div>
+              </div>
+              <div class="ticket__body">
+                <section class="ticket__section">
+                  <h3>Resumen Cliente</h3>
+                  <p>{{ boleta.cliente }}</p>
+                  <p>{{ boleta.fecha }}</p>
+                  <p>{{ boleta.horainicial }} - {{ boleta.horatermino }}</p>
+                  <p>{{ boleta.auto }}</p>
+                </section>
+                <section class="ticket__section">
+                  <h3>Estacionamiento</h3>
+                  <p>{{ boleta.duenio }}</p>
+                  <p>{{ boleta.parking }}</p>
+                  <p>Santiago</p>
+                </section>
+                <section class="ticket__section">
+                  <h3>Metodo de Pago</h3>
+                  <p>Mastercard **** {{ tarjeta }}</p>
+                </section>
+              </div>
+              <footer class="ticket__footer">
+                <span>Total</span>
+                <span>${{ boleta.total }}</span>
+              </footer>
+            </article>
+            <p class="small pb-lg-2 mt-4">
+              <a class="text-white-50" [routerLink]="['/dashboard']">Volver</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

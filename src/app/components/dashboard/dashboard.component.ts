@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { switchMap } from 'rxjs/operators';
 import { Autos } from 'src/app/models/autos';
 import { Boleta } from 'src/app/models/boleta';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,7 @@ import { Boleta } from 'src/app/models/boleta';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   parkings: Parking[] = [];
   parkingstotal: Parking[] = [];
@@ -140,5 +141,16 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+  }
+
+  generateBoleta(idboleta: any) {
+    localStorage.setItem(
+      'idboleta',
+      JSON.stringify({
+        id: idboleta,
+      })
+    );
+
+    this.router.navigate(['/resumen']);
   }
 }

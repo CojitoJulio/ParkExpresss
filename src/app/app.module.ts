@@ -20,6 +20,7 @@ import { MainComponent } from './components/main/main.component';
 import { RentselectionComponent } from './components/rentselection/rentselection.component';
 import { RentprocessComponent } from './components/rentprocess/rentprocess.component';
 import { RentpayComponent } from './components/rentpay/rentpay.component';
+import { BoletasComponent } from './components/boletas/boletas.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RentpayComponent } from './components/rentpay/rentpay.component';
     RentselectionComponent,
     RentprocessComponent,
     RentpayComponent,
+    BoletasComponent,
   ],
   imports: [
     BrowserModule,
