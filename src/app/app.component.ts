@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
     this.authservice.isLogged$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
     });
-
-    console.log(this.isLoggedIn);
   }
 
   logout() {

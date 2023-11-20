@@ -70,7 +70,7 @@ const routes: Routes = [
     component: BoletasComponent,
     canActivate: [authGuard],
   },
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
 ];
 

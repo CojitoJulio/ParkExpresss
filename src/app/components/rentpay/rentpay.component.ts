@@ -57,7 +57,6 @@ export class RentpayComponent implements OnInit {
 
   selectCard(card: any) {
     this.cardSeleccionada = this.cardSeleccionada === card ? null : card;
-    console.log(this.cardSeleccionada);
   }
 
   getuseractual() {
@@ -128,7 +127,7 @@ export class RentpayComponent implements OnInit {
         horainicial: this.actualrent.horainicial,
         horatermino: this.horatermino,
         fecha: this.actualrent.fecha,
-        tiempototal: this.tiempototal,
+        tiempototal: this.actualrent.tiempo,
         total: this.total,
         deuda: false,
       };
@@ -171,6 +170,10 @@ export class RentpayComponent implements OnInit {
     this.total = this.actualrent.total;
     this.tiempototal = this.actualrent.tiempo;
     this.horatermino = this.actualrent.horatermino;
+    console.log('esto?');
+    console.log(this.actualrent.tiempo);
+    console.log('y esto?');
+    console.log(this.tiempototal);
   }
 
   getparking() {
@@ -197,7 +200,6 @@ export class RentpayComponent implements OnInit {
       this.tarjetaactual = this.cards.find(
         (card) => card.id === cardId
       ) as Tarjeta;
-      console.log(this.tarjetaactual);
     } else {
       console.warn(
         'this.cardSeleccionada.id es undefined. No se puede buscar la tarjeta.'
@@ -225,11 +227,8 @@ export class RentpayComponent implements OnInit {
     this.apiservice.getCars().subscribe((cars: Autos[]) => {
       this.cars = cars;
       this.cars.forEach((car) => {
-        console.log(this.actualrent.idauto);
-        console.log(car);
         if (this.actualrent.idauto == car.id) {
           this.autoselect = car;
-          console.log(this.autoselect);
         }
       });
     });

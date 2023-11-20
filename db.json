@@ -39,6 +39,14 @@
       "anio": "2005",
       "idduenio": 11,
       "id": 8
+    },
+    {
+      "marca": "MG",
+      "modelo": "5",
+      "patente": "JDkd90",
+      "anio": "2023",
+      "idduenio": 11,
+      "id": 9
     }
   ],
   "usuarios": [
@@ -135,7 +143,7 @@
         "lat": -70.6179714202881
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "precio": 1500,
       "nroparking": "22",
       "direccion": "Avenida Sur #2280"
@@ -159,7 +167,7 @@
         "lat": -70.61899065971376
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "descripcion": "Es primer estacionamiento de los verdes y esta en el piso -2",
       "precio": "2000",
       "nroparking": "25",
@@ -172,7 +180,7 @@
         "lat": -70.61235212539529
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "descripcion": "es el lindo",
       "precio": "800",
       "nroparking": "T3",
@@ -185,11 +193,24 @@
         "lat": -70.61411466115294
       },
       "iddueno": 11,
-      "estado": false,
+      "estado": true,
       "descripcion": "Es el estacionamiento 3",
       "precio": "1200",
       "nroparking": "3",
       "direccion": "Calvo Mackenna #888"
+    },
+    {
+      "id": 6,
+      "ubicacion": {
+        "lon": -33.43216121030099,
+        "lat": -70.61739171178719
+      },
+      "iddueno": 11,
+      "estado": true,
+      "descripcion": "Es el estacionamiento frente a la casa de verde",
+      "precio": "850",
+      "nroparking": "1",
+      "direccion": "Borgoño 319"
     }
   ],
   "tarjetas": [
@@ -438,6 +459,76 @@
       "total": 0,
       "deuda": false,
       "id": 29
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "MG 5",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "21:15:41",
+      "horatermino": "null",
+      "fecha": "19-11-2023",
+      "tiempototal": 0.1,
+      "total": 0,
+      "deuda": false,
+      "id": 30
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "21:31:55",
+      "horatermino": "21:33:5",
+      "fecha": "19-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 34
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "21:34:58",
+      "horatermino": "21:35:10",
+      "fecha": "19-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 35
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "Peugeot 206",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "21:45:8",
+      "horatermino": "21:45:19",
+      "fecha": "19-11-2023",
+      "tiempototal": 0,
+      "total": 0,
+      "deuda": false,
+      "id": 40
+    },
+    {
+      "duenio": "Daniel Gutierrez",
+      "cliente": "Tyler the Creator",
+      "auto": "MG 5",
+      "tarjeta": "1236782678234891",
+      "parking": "Avenida Manuel Montt #1552",
+      "horainicial": "21:48:46",
+      "horatermino": "21:48:52",
+      "fecha": "19-11-2023",
+      "tiempototal": 0.1,
+      "total": 150,
+      "deuda": false,
+      "id": 41
     }
   ]
 }
