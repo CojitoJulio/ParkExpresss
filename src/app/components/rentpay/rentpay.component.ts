@@ -170,10 +170,6 @@ export class RentpayComponent implements OnInit {
     this.total = this.actualrent.total;
     this.tiempototal = this.actualrent.tiempo;
     this.horatermino = this.actualrent.horatermino;
-    console.log('esto?');
-    console.log(this.actualrent.tiempo);
-    console.log('y esto?');
-    console.log(this.tiempototal);
   }
 
   getparking() {

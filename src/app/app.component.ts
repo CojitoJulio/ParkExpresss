@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('actualuser');
-    this.router.navigate(['/main']);
+    this.router.navigate(['/login']);
     this.authservice.logout();
   }
 }

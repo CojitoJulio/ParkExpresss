@@ -44,7 +44,6 @@ export class RentselectionComponent implements OnInit {
 
   selectCar(car: any) {
     this.autoSeleccionado = this.autoSeleccionado === car ? null : car;
-    console.log('este es el auto: ' + this.autoSeleccionado);
   }
 
   getuser() {

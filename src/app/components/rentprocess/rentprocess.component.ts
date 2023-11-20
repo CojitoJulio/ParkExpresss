@@ -40,7 +40,6 @@ export class RentprocessComponent implements OnInit {
       this.actualparkselectedid = actualparkselectedidid;
       var actualhour = JSON.parse(actualparkselected).hora;
       this.firsthour = actualhour;
-      console.log(this.firsthour);
     }
     this.getparkmero();
   }
@@ -73,7 +72,6 @@ export class RentprocessComponent implements OnInit {
   }
 
   calcs() {
-    console.log('por lo menos funciona esta wea?');
     console.log(this.actualrent);
     var tiempo = this.actualrent.tiempo;
     var fecha = new Date();
@@ -95,12 +93,10 @@ export class RentprocessComponent implements OnInit {
     this.getpark();
     this.apiService.getActualRent().subscribe((rents: Actualrent[]) => {
       this.rents = rents;
-      console.log(this.rents);
 
       this.rents.forEach((rent) => {
         if (rent.idparking == this.actualparkid) {
           this.actualrent = rent;
-          console.log(this.actualrent);
         }
       });
     });

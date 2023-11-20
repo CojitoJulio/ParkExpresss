@@ -47,6 +47,14 @@
       "anio": "2023",
       "idduenio": 11,
       "id": 9
+    },
+    {
+      "marca": "Volkswagen",
+      "modelo": "Golf gti",
+      "patente": "ua2084",
+      "anio": "1999",
+      "idduenio": 14,
+      "id": 10
     }
   ],
   "usuarios": [
@@ -115,7 +123,7 @@
     },
     {
       "email": "steve@odd.com",
-      "nombre": "Steve Lazy",
+      "nombre": "Steve Lacy",
       "telefono": "192834712",
       "password": "onltif",
       "id": 10
@@ -129,10 +137,24 @@
     },
     {
       "email": "pelao@brazzers.com",
-      "nombre": "pelao brazzers",
+      "nombre": "Pelao Brazzers",
       "telefono": "938726463",
       "password": "brazzers",
       "id": 12
+    },
+    {
+      "email": "esteban@janoski.com",
+      "nombre": "Esteban Janoski",
+      "telefono": "978236478",
+      "password": "zapatillas",
+      "id": 13
+    },
+    {
+      "email": "carlossainzjr@ferrari.com",
+      "nombre": "Carlos Sainz",
+      "telefono": "937624819",
+      "password": "ferrari15",
+      "id": 14
     }
   ],
   "estacionamientos": [
@@ -211,6 +233,32 @@
       "precio": "850",
       "nroparking": "1",
       "direccion": "Borgoño 319"
+    },
+    {
+      "id": 7,
+      "ubicacion": {
+        "lon": -33.432445129101964,
+        "lat": -70.61349745845473
+      },
+      "iddueno": 10,
+      "estado": true,
+      "descripcion": "Es el unico que esta bajo un techo",
+      "precio": "900",
+      "nroparking": "2A",
+      "direccion": "Matilde Salamanca 718"
+    },
+    {
+      "id": 8,
+      "ubicacion": {
+        "lon": -33.43060164200177,
+        "lat": -70.61915159225465
+      },
+      "iddueno": 14,
+      "estado": false,
+      "descripcion": "El estacionamiento frente a la entrada del edificio",
+      "precio": "1000",
+      "nroparking": "9A",
+      "direccion": "Avenida Manuel Montt #211"
     }
   ],
   "tarjetas": [
@@ -274,9 +322,32 @@
       "cvv": "222",
       "idduenio": 36,
       "id": 13
+    },
+    {
+      "nrotarjeta": "3947883529093652",
+      "titular": "Carlos Sainz Jr",
+      "mes": "09",
+      "anio": "2024",
+      "cvv": "992",
+      "idduenio": 14,
+      "id": 14
     }
   ],
-  "actualrent": [],
+  "actualrent": [
+    {
+      "id": 1,
+      "idduenio": 10,
+      "idcliente": 14,
+      "idparking": 7,
+      "idauto": 10,
+      "horainicial": "0:52:36",
+      "horatermino": "0:52:39",
+      "total": 90,
+      "fecha": "20-11-2023",
+      "tiempo": 0.1,
+      "deuda": true
+    }
+  ],
   "boletas": [
     {
       "duenio": "Tyler the Creator",
@@ -486,7 +557,7 @@
       "tiempototal": 0,
       "total": 0,
       "deuda": false,
-      "id": 34
+      "id": 39
     },
     {
       "duenio": "Daniel Gutierrez",
@@ -500,7 +571,7 @@
       "tiempototal": 0,
       "total": 0,
       "deuda": false,
-      "id": 35
+      "id": 40
     },
     {
       "duenio": "Daniel Gutierrez",
@@ -514,7 +585,7 @@
       "tiempototal": 0,
       "total": 0,
       "deuda": false,
-      "id": 40
+      "id": 41
     },
     {
       "duenio": "Daniel Gutierrez",
@@ -528,7 +599,21 @@
       "tiempototal": 0.1,
       "total": 150,
       "deuda": false,
-      "id": 41
+      "id": 42
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Carlos Sainz",
+      "auto": "Volkswagen Golf gti",
+      "tarjeta": "3947883529093652",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "0:49:23",
+      "horatermino": "0:49:27",
+      "fecha": "20-11-2023",
+      "tiempototal": 0.1,
+      "total": 80,
+      "deuda": false,
+      "id": 43
     }
   ]
 }
