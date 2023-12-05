@@ -1,16 +1,16 @@
-#mapcontainer{
-    width: 100%;
-    border: 1px solid red;
-    height: 350px;
-    display: flex;
-    justify-content: center;
+#mapcontainer {
+  width: 100%;
+  border: 1px solid red;
+  height: 350px;
+  display: flex;
+  justify-content: center;
 }
 
-#map{
-    height: 350px;
-    border-radius: 10px;
+#map {
+  height: 350px;
+  border-radius: 9px;
 }
 
-.falta{
-    border: 1px solid red;
+.falta {
+  border: 1px solid red;
 }
