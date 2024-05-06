@@ -55,6 +55,14 @@
       "anio": "1999",
       "idduenio": 14,
       "id": 10
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Fastback",
+      "patente": "JSKP38",
+      "anio": "2022",
+      "idduenio": 15,
+      "id": 11
     }
   ],
   "usuarios": [
@@ -155,6 +163,13 @@
       "telefono": "937624819",
       "password": "ferrari15",
       "id": 14
+    },
+    {
+      "email": "nevera@maricon.com",
+      "nombre": "Nestor Valenzuela",
+      "telefono": "923874628",
+      "password": "megustalatula",
+      "id": 15
     }
   ],
   "estacionamientos": [
@@ -331,6 +346,15 @@
       "cvv": "992",
       "idduenio": 14,
       "id": 14
+    },
+    {
+      "nrotarjeta": "3467812346981723",
+      "titular": "Nestor Valenzuela",
+      "mes": "08",
+      "anio": "2029",
+      "cvv": "384",
+      "idduenio": 15,
+      "id": 15
     }
   ],
   "actualrent": [
@@ -614,6 +638,20 @@
       "total": 80,
       "deuda": false,
       "id": 43
+    },
+    {
+      "duenio": "Tyler the Creator",
+      "cliente": "Nestor Valenzuela",
+      "auto": "Mercedes Benz S500",
+      "tarjeta": "3467812346981723",
+      "parking": "Silvina Hurtado 2333",
+      "horainicial": "0:44:12",
+      "horatermino": "0:44:20",
+      "fecha": "5-12-2023",
+      "tiempototal": 0.1,
+      "total": 80,
+      "deuda": false,
+      "id": 44
     }
   ]
 }
